@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const People = () => {
-  return <Text>People</Text>;
+const FiltersUsers = () => {
+  return <Text>FiltersUsers</Text>;
 };
 
-export default People;
+export default FiltersUsers;
 
 const Text = styled.Text`
   color: red;

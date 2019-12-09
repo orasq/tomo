@@ -8,12 +8,14 @@ import { VennIcon } from "./Icons";
 // Theme
 import { colors, fonts } from "../styles/theme";
 
-const BigInterestTag = () => {
+const BigInterestTag = props => {
+  const { number } = props;
+
   return (
     <Container>
       <Tag>
         <VennIcon />
-        <Text>You share 34 common interests</Text>
+        <Text>You share {number} common interests</Text>
       </Tag>
     </Container>
   );

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Messages = () => {
-  return <Text>Messages</Text>;
+const AccountScreen = () => {
+  return <Text>Account</Text>;
 };
 
-export default Messages;
+export default AccountScreen;
 
 const Text = styled.Text`
   color: red;

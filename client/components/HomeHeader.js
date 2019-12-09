@@ -14,14 +14,14 @@ const HomeHeader = props => {
       <Toggle>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Users");
+            navigation.navigate("UsersScreen");
           }}
         >
           <ToggleItem active={active.includes("users")}>People</ToggleItem>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("Plans");
+            navigation.navigate("PlansScreen");
           }}
         >
           <ToggleItem active={active.includes("plans")}>Plans</ToggleItem>
@@ -29,7 +29,7 @@ const HomeHeader = props => {
       </Toggle>
       <SettingsIcon
         onPress={() => {
-          navigation.navigate("FiltersUsers");
+          navigation.navigate("UsersFilterScreen");
         }}
       >
         <Icon name="cog" size={30} />

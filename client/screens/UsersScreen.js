@@ -9,7 +9,7 @@ import { colors } from "../styles/theme";
 // Components import
 import { UserCard, HomeHeader, Container } from "../components";
 
-const Users = ({ navigation }) => {
+const UsersScreen = ({ navigation }) => {
   const [fakeUsers, setFakeUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,8 +29,11 @@ const Users = ({ navigation }) => {
 
   return (
     <Container>
-      <HomeHeader active="users" navigation={navigation} />
-      {/* <UsersWrap> */}
+      <HomeHeader
+        style={{ position: "sticky" }}
+        active="users"
+        navigation={navigation}
+      />
       {loading ? (
         <ActivityIndicator size="large" color={colors.mediumGrey} />
       ) : (
@@ -42,7 +45,7 @@ const Users = ({ navigation }) => {
           renderItem={({ item }) => (
             <UserCard
               onPress={() =>
-                navigation.navigate("UserProfile", { userInfo: item })
+                navigation.navigate("UsersProfileScreen", { userInfo: item })
               }
               name={item.name}
               interests={item.age}
@@ -52,15 +55,13 @@ const Users = ({ navigation }) => {
           keyExtractor={item => item.phone}
         />
       )}
-
-      {/* </UsersWrap> */}
     </Container>
   );
 };
 
-export default Users;
+export default UsersScreen;
 
-Users.navigationOptions = {
+UsersScreen.navigationOptions = {
   header: null
 };
 

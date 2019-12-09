@@ -12,7 +12,7 @@ import { Input, Button } from "../components";
 const VALID_EMAIL = "jean-jean@gmail.com";
 const VALID_PASSWORD = "password123";
 
-const Login = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState(VALID_EMAIL);
   const [password, setPassword] = useState(VALID_PASSWORD);
   const [errors, setErrors] = useState([]);
@@ -38,7 +38,7 @@ const Login = ({ navigation }) => {
       setLoading(false);
 
       if (!errors.length) {
-        navigation.navigate("HomeFlow");
+        navigation.navigate("UsersStack");
       }
     }, 1000);
   };
@@ -84,7 +84,7 @@ const Login = ({ navigation }) => {
   );
 };
 
-export default Login;
+export default LoginScreen;
 
 // Styles
 

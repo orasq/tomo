@@ -7,7 +7,7 @@ import { paddings } from "../styles/theme";
 // Components import
 import { HomeHeader } from "../components";
 
-const Plans = props => {
+const PlansScreen = props => {
   const { navigation } = props;
 
   return (
@@ -18,9 +18,9 @@ const Plans = props => {
   );
 };
 
-export default Plans;
+export default PlansScreen;
 
-Plans.navigationOptions = {
+PlansScreen.navigationOptions = {
   header: null
 };
 

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { TouchableOpacity, Keyboard, KeyboardAvoidingView } from "react-native";
+import {
+  ScrollView,
+  TouchableOpacity,
+  Keyboard,
+  KeyboardAvoidingView
+} from "react-native";
 import styled from "styled-components";
 
 import { colors, paddings, fonts } from "../styles/theme";
@@ -10,7 +15,7 @@ import { Input, Button } from "../components";
 const VALID_EMAIL = "jean-jean@gmail.com";
 const VALID_PASSWORD = "password123";
 
-const Signup = ({ navigation }) => {
+const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -39,7 +44,7 @@ const Signup = ({ navigation }) => {
       setLoading(false);
 
       if (!errors.length) {
-        navigation.navigate("Users");
+        navigation.navigate("HomeStack");
       }
     }, 1000);
   };
@@ -49,52 +54,54 @@ const Signup = ({ navigation }) => {
       style={{ flex: 1, justifyContent: "center" }}
       behavior="padding"
     >
-      <Container on>
-        <H1>Create an Account</H1>
-        <Input
-          error={hasErrors("email")}
-          label="E-mail Address"
-          placeholder="ex: Jean-Jean@gmail.com"
-          marginVertical={15}
-          onChangeText={text => setEmail(text)}
-          value={email}
-        />
-        <Input
-          error={hasErrors("password")}
-          secure
-          label="Password"
-          placeholder="Min. 5 characters"
-          marginVertical={15}
-          onChangeText={text => setPassword(text)}
-          value={password}
-        />
-        <Input
-          error={hasErrors("password")}
-          secure
-          label="Confirm Password"
-          placeholder="Min. 5 characters"
-          marginVertical={15}
-          onChangeText={text => setPasswordConfirm(text)}
-          value={passwordConfirm}
-        />
-        <Error>{}</Error>
-        <Button
-          loading={loading}
-          text="Signup"
-          bgColor={colors.primary}
-          textColor="white"
-          marginVertical={30}
-          onPress={() => handleSignup()}
-        />
-        <TouchableOpacity>
-          <FooterText>Forgot your password ?</FooterText>
-        </TouchableOpacity>
-      </Container>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <Container>
+          <H1>Create an Account</H1>
+          <Input
+            error={hasErrors("email")}
+            label="E-mail Address"
+            placeholder="ex: Jean-Jean@gmail.com"
+            marginVertical={15}
+            onChangeText={text => setEmail(text)}
+            value={email}
+          />
+          <Input
+            error={hasErrors("password")}
+            secure
+            label="Password"
+            placeholder="Min. 5 characters"
+            marginVertical={15}
+            onChangeText={text => setPassword(text)}
+            value={password}
+          />
+          <Input
+            error={hasErrors("password")}
+            secure
+            label="Confirm Password"
+            placeholder="Min. 5 characters"
+            marginVertical={15}
+            onChangeText={text => setPasswordConfirm(text)}
+            value={passwordConfirm}
+          />
+          <Error>{}</Error>
+          <Button
+            loading={loading}
+            text="Signup"
+            bgColor={colors.primary}
+            textColor="white"
+            marginVertical={30}
+            onPress={() => handleSignup()}
+          />
+          <TouchableOpacity>
+            <FooterText>Forgot your password ?</FooterText>
+          </TouchableOpacity>
+        </Container>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
 
-export default Signup;
+export default SignupScreen;
 
 // Styles
 

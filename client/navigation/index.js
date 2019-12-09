@@ -1,11 +1,11 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
-import LoginFlow from "./LoginFlow";
-import AppFlow from "./AppFlow";
+import AuthStack from "./AuthStack";
+import AppStack from "./AppStack";
 
 const Navigation = createSwitchNavigator({
-  LoginFlow: LoginFlow,
-  AppFlow: AppFlow
+  AuthStack: AuthStack,
+  AppStack: AppStack
 });
 
 export default createAppContainer(Navigation);

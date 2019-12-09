@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, SafeAreaView } from "react-native";
+import { TouchableOpacity } from "react-native";
 import styled from "styled-components";
 
 // Theme
@@ -8,7 +8,7 @@ import { colors, paddings, fonts } from "../styles/theme";
 // Components import
 import Button from "../components/Button";
 
-const Landing = ({ navigation }) => {
+const LandingScreen = ({ navigation }) => {
   return (
     <Container>
       <Logo onPress={() => navigation.navigate("Signup")}>tomo</Logo>
@@ -19,7 +19,7 @@ const Landing = ({ navigation }) => {
         bgColor={colors.primary}
         textColor="white"
         marginVertical={10}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("LoginScreen")}
       />
       <Button
         shadow
@@ -27,7 +27,7 @@ const Landing = ({ navigation }) => {
         bgColor="white"
         textColor={colors.mediumGrey}
         marginVertical={10}
-        onPress={() => navigation.navigate("Signup")}
+        onPress={() => navigation.navigate("SignupScreen")}
       />
       <TouchableOpacity>
         <FooterText>Terms and conditions</FooterText>
@@ -36,11 +36,11 @@ const Landing = ({ navigation }) => {
   );
 };
 
-export default Landing;
+export default LandingScreen;
 
 //Navigation options
 
-Landing.navigationOptions = {
+LandingScreen.navigationOptions = {
   header: null
 };
 

@@ -1,25 +1,23 @@
 import React from "react";
-import { Image } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
-import { Ionicons } from "@expo/vector-icons";
 
 // Theme
-import { colors, paddings } from "../styles/theme";
+import { paddings } from "../styles/theme";
 
 // Components import
 import { BackArrow } from "../components/Icons";
 
 // Screens
-import Landing from "../screens/Landing";
-import Signup from "../screens/Signup";
-import Login from "../screens/Login";
+import LandingScreen from "../screens/LandingScreen";
+import SignupScreen from "../screens/SignupScreen";
+import LoginScreen from "../screens/LoginScreen";
 
 // Stack Navigator
-export default LoginFlow = createStackNavigator(
+export default AuthStack = createStackNavigator(
   {
-    Landing,
-    Signup,
-    Login
+    LandingScreen,
+    SignupScreen,
+    LoginScreen
   },
   {
     defaultNavigationOptions: {

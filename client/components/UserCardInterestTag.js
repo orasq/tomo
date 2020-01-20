@@ -3,31 +3,31 @@ import { Platform } from "react-native";
 import styled from "styled-components";
 
 // Theme
-import { colors, fonts } from "../styles/theme";
+import { colors } from "../styles/theme";
 
 // Composants import
-import { VennIcon } from "../components/Icons";
+import { VennIcon } from "./Icons";
 
-const InterestTag = props => {
+const UserCardInterestTag = props => {
   const { number } = props;
 
   return (
-    <Container>
+    <Wrapper>
       <VennIcon size="30" />
       <Text>{number}</Text>
-    </Container>
+    </Wrapper>
   );
 };
 
-export default InterestTag;
+export default UserCardInterestTag;
 
-const Container = styled.View`
+// Styles
+
+const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 8px;
-  right: 10px;
+  align-self: flex-end; /* width of element depends on its content */
   width: auto;
   height: 25px;
   padding: 0 8px;

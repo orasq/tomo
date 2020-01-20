@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, TouchableOpacity, Keyboard, FlatList } from "react-native";
 import styled from "styled-components";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 // Theme
-import { colors, fonts, paddings } from "../styles/theme";
+import { colors, sizes, paddings } from "../styles/theme";
 
 // Components import
 import { ChatBubble } from "../components";
@@ -85,6 +85,7 @@ const ChatScreen = () => {
       <InputWrap>
         <InputField
           multiline
+          textAlignVertical={"center"}
           placeholder="Write message ..."
           value={inputMessage}
           onSubmitEditing={() => handleInput()}
@@ -109,23 +110,26 @@ const ChatScreen = () => {
 
 export default ChatScreen;
 
-ChatScreen.navigationOptions = {
-  title: "NOM_CONTACT",
-  headerTintColor: colors.darkGrey,
-  headerTitleStyle: {
-    fontWeight: "200" /* use to be able to set custom font */,
-    fontFamily: fonts.bold
-  },
-  headerStyle: {
-    /* remove default shadow */
-    shadowColor: "#5bc4ff",
-    shadowOpacity: 0,
-    shadowOffset: {
-      height: 0
-    },
-    shadowRadius: 0,
-    elevation: 1
-  }
+// navigationOptions = function to be able to use navigation.getParam()
+ChatScreen.navigationOptions = ({ navigation }) => {
+  const user = navigation.getParam("user");
+  return {
+    title: user.name,
+    headerRight: (
+      <HeaderLinkWrapper
+        onPress={() =>
+          navigation.navigate("UsersProfileScreen", { userInfo: user })
+        }
+      >
+        <HeaderLinkIcon name="eye" size={14} color="white" />
+        <HeaderLinkAvatar source={{ uri: user.photo }} />
+      </HeaderLinkWrapper>
+    ),
+    headerRightContainerStyle: {
+      alignItems: "center",
+      paddingRight: paddings.main
+    }
+  };
 };
 
 const ChatScreenContainer = styled.View`
@@ -148,11 +152,13 @@ const InputWrap = styled.View`
 `;
 
 const InputField = styled.TextInput`
+  justify-content: center;
   align-items: center;
+  /* text-align: center;
+  align-self: center; */
   width: 88%;
-  height: 55px;
-  padding-left: 20px;
-  padding-right: 50px;
+  min-height: 55px;
+  padding: 10px 20px;
   border-radius: 26px;
   border: 1px ${colors.mediumGrey};
   background-color: white;
@@ -167,6 +173,31 @@ const InputButton = styled.View`
 `;
 
 const Text = styled.Text``;
+
+const HeaderLinkWrapper = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: ${sizes.smallRadius};
+  background-color: #000000;
+  overflow: hidden;
+`;
+
+const HeaderLinkAvatar = styled.Image`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: ${colors.lightGrey};
+  border-color: ${colors.whiteGrey};
+  opacity: 0.5;
+`;
+
+const HeaderLinkIcon = styled(FontAwesome)`
+  z-index: 10;
+`;
 
 // Fake Data
 
@@ -195,6 +226,6 @@ const fakeChatMessages = [
     id: "4",
     sender: "John",
     recipient: "Olivier",
-    message: "I'm great!"
+    message: "Aight!"
   }
 ];

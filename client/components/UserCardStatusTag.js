@@ -5,19 +5,21 @@ import styled from "styled-components";
 // Theme
 import { fonts } from "../styles/theme";
 
-const UserStatusTag = props => {
-  const { text, textColor, bgColor } = props;
+const UserCardStatusTag = props => {
+  const { text } = props;
 
   return (
-    <Container>
+    <Wrapper>
       <Text>{text}</Text>
-    </Container>
+    </Wrapper>
   );
 };
 
-export default UserStatusTag;
+export default UserCardStatusTag;
 
-const Container = styled.View`
+// Styles
+
+const Wrapper = styled.View`
   flex-direction: row;
   justify-content: center;
   align-items: center;

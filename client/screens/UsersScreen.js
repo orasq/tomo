@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, FlatList, ActivityIndicator } from "react-native";
+import { FlatList, ActivityIndicator } from "react-native";
 import styled from "styled-components";
 import axios from "axios";
+import _ from "lodash";
 
 // Theme
-import { colors } from "../styles/theme";
+import { colors, paddings } from "../styles/theme";
 
 // Components import
-import { UserCard, HomeHeader, Container } from "../components";
+import { Container, UserCard, HomeHeader } from "../components";
 
 const UsersScreen = ({ navigation }) => {
   const [fakeUsers, setFakeUsers] = useState([]);
@@ -15,7 +16,7 @@ const UsersScreen = ({ navigation }) => {
 
   useEffect(() => {
     axios
-      .get("https://uinames.com/api/?ext&amount=25")
+      .get("https://uinames.com/api/?ext&amount=200")
       .then(function(response) {
         // handle success
         setFakeUsers(response.data);
@@ -27,19 +28,33 @@ const UsersScreen = ({ navigation }) => {
       });
   }, []);
 
+  // Check scroll position and pass it to HomeHeader
+  const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
+
+  const handleScroll = e => {
+    setCurrentScrollPosition(Math.floor(e.nativeEvent.contentOffset.y));
+  };
+
   return (
-    <Container>
+    <Container home>
       <HomeHeader
-        style={{ position: "sticky" }}
+        currentScrollPosition={currentScrollPosition}
         active="users"
         navigation={navigation}
       />
+      {/* Check if 'loading', otherwise display UserCard list */}
       {loading ? (
         <ActivityIndicator size="large" color={colors.mediumGrey} />
       ) : (
         <FlatList
+          onScroll={handleScroll}
           horizontal={false}
+          showsVerticalScrollIndicator={false}
           numColumns={2}
+          contentContainerStyle={{
+            flexGrow: 1,
+            paddingTop: 70 /* = HomeHeader component height */
+          }}
           columnWrapperStyle={{ justifyContent: "space-between" }}
           data={fakeUsers}
           renderItem={({ item }) => (
@@ -66,20 +81,3 @@ UsersScreen.navigationOptions = {
 };
 
 // Styles
-
-// const Container = styled.View`
-//   flex: 1;
-//   padding: ${paddings.main}px;
-//   padding-top: ${paddings.safeAreaTop}px;
-// `;
-
-// const UsersWrap = styled(FlatList)`
-//   padding-top: 100px;
-//   flex: 1;
-//   flex-flow: row wrap;
-//   justify-content: space-between;
-// `;
-
-// const Text = styled.Text`
-//   color: red;
-// `;

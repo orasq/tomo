@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { colors, paddings, fonts } from "../styles/theme";
 
 // Components import
-import { Input, Button } from "../components";
+import { Container, Input, Button, Title, ErrorText } from "../components";
 
 const VALID_EMAIL = "jean-jean@gmail.com";
 const VALID_PASSWORD = "password123";
@@ -55,8 +55,10 @@ const SignupScreen = ({ navigation }) => {
       behavior="padding"
     >
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <Container>
-          <H1>Create an Account</H1>
+        <Container center login safeArea>
+          <Title h1 marginBottom={30}>
+            Create an Account
+          </Title>
           <Input
             error={hasErrors("email")}
             label="E-mail Address"
@@ -83,18 +85,14 @@ const SignupScreen = ({ navigation }) => {
             onChangeText={text => setPasswordConfirm(text)}
             value={passwordConfirm}
           />
-          <Error>{}</Error>
+          <ErrorText>{}</ErrorText>
           <Button
             loading={loading}
-            text="Signup"
-            bgColor={colors.primary}
-            textColor="white"
             marginVertical={30}
             onPress={() => handleSignup()}
-          />
-          <TouchableOpacity>
-            <FooterText>Forgot your password ?</FooterText>
-          </TouchableOpacity>
+          >
+            Signup
+          </Button>
         </Container>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -104,28 +102,3 @@ const SignupScreen = ({ navigation }) => {
 export default SignupScreen;
 
 // Styles
-
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  padding: ${paddings.login}px;
-  padding-top: ${paddings.safeAreaTop}px;
-`;
-
-const H1 = styled.Text`
-  margin-bottom: 40px;
-  font-size: ${fonts.h1}px;
-  color: ${colors.darkGrey};
-`;
-
-const Error = styled.Text`
-  font-size: 15px;
-  color: red;
-  font-weight: 300;
-`;
-
-const FooterText = styled.Text`
-  font-size: 14px;
-  color: ${colors.mediumGrey};
-  text-decoration: underline;
-`;

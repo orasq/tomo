@@ -3,17 +3,15 @@ import { Dimensions, TouchableOpacity } from "react-native";
 import styled from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
 
-console.log(LinearGradient);
-
 // Theme
 import { paddings, fonts, sizes } from "../styles/theme";
 
 // Components import
-import InterestTag from "./InterestTag";
-import UserStatusTag from "./UserStatusTag";
+import UserCardInterestTag from "./UserCardInterestTag";
+import UserCardStatusTag from "./UserCardStatusTag";
 
-const { width, height } = Dimensions.get("window");
-
+// Misc. variables
+const { width } = Dimensions.get("window");
 const cardWidth = (width - paddings.main * 3) / 2;
 const cardHeight = cardWidth * 1.5;
 
@@ -24,26 +22,26 @@ const UserCard = props => {
     <TouchableOpacity onPress={onPress}>
       <Container first={first}>
         <Image source={{ uri: profileImage }}>
-          <InterestTag number={interests} />
+          <LinearGradient
+            colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.7)"]}
+            start={[0, 0]}
+            end={[0, 1]}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: cardWidth,
+              height: 70
+            }}
+          />
+          <UserCardInterestTag number={interests} />
           <UserInfo>
             <Name>{name}</Name>
             <Tags>
-              <UserStatusTag text="Leaving in 4 days" />
+              <UserCardStatusTag text="Leaving in 4 days" />
             </Tags>
           </UserInfo>
         </Image>
-        <LinearGradient
-          colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.7)"]}
-          start={[0, 0]}
-          end={[0, 1]}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            height: 65
-          }}
-        />
       </Container>
     </TouchableOpacity>
   );
@@ -64,13 +62,13 @@ const Container = styled.View`
 
 const Image = styled.ImageBackground`
   flex: 1;
+  justify-content: space-between; /* put InterestTag at the top, and UserInfo at the bottom */
+  padding: 15px;
 `;
 
 const UserInfo = styled.View`
-  position: absolute;
-  bottom: 10px;
-  left: 15px;
   flex-direction: column;
+  width: 100%;
   z-index: 2;
 `;
 
@@ -81,7 +79,6 @@ const Name = styled.Text`
 `;
 
 const Tags = styled.View`
-  flex-direction: column;
-  justify-content: flex-start;
+  align-self: flex-start; /* width of element depends on its content */
   margin-top: 4px;
 `;

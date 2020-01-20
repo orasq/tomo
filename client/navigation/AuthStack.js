@@ -23,7 +23,7 @@ export default AuthStack = createStackNavigator(
     defaultNavigationOptions: {
       headerStyle: {
         height: 60,
-        backgroundColor: "white", // or 'white
+        backgroundColor: "white",
         borderBottomColor: "transparent",
         elevation: 0 // for android
       },

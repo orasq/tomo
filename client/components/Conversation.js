@@ -77,6 +77,7 @@ const NotificationBubble = styled.Text`
   font-family: ${fonts.bold};
   font-size: 10px;
   color: white;
+  overflow: hidden;
 `;
 
 const Excerpt = styled.Text`

@@ -31,7 +31,16 @@ const textStyle = size => {
 };
 
 const Title = props => {
-  const { children } = props;
+  const {
+    children,
+    h1,
+    h2,
+    h3,
+    center,
+    marginTop,
+    marginBottom,
+    colorText
+  } = props;
 
   return <Text {...props}>{children}</Text>;
 };
@@ -46,5 +55,6 @@ const Text = styled.Text`
   ${props => props.marginTop && `margin-top: ${props.marginTop}px;`};
   ${props => props.marginBottom && `margin-bottom: ${props.marginBottom}px;`};
 
-  color: ${props => `${colors[props.colorText]}` || "red"};
+  color: ${props =>
+    props.colorText ? `${colors[props.colorText]}` : `${colors.darkGrey}`};
 `;

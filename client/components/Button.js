@@ -3,37 +3,28 @@ import { ActivityIndicator } from "react-native";
 import styled from "styled-components";
 
 // Theme
-import { fonts } from "../styles/theme";
+import { fonts, colors } from "../styles/theme";
 
 const Button = props => {
   const {
-    text,
+    children,
     bgColor,
     textColor,
     marginVertical,
-    shadow,
+    ghost,
     onPress,
     loading
   } = props;
 
-  const buttonStyles = [
-    shadow && {
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.1,
-      shadowRadius: 10,
-      elevation: 10
-    },
-    { backgroundColor: bgColor },
-    { marginVertical: marginVertical }
-  ];
-
   return (
-    <Btn style={buttonStyles} onPress={onPress}>
+    <Btn {...props}>
       {loading ? (
-        <ActivityIndicator size="small" color={textColor} />
+        <ActivityIndicator
+          size="small"
+          color={textColor ? textColor : "white"}
+        />
       ) : (
-        <Text style={{ color: textColor }}>{text}</Text>
+        <Text textColor={textColor}>{children}</Text>
       )}
     </Btn>
   );
@@ -42,16 +33,22 @@ const Button = props => {
 export default Button;
 
 const Btn = styled.TouchableOpacity`
-  width: 100%;
-  height: 55px;
-  border-radius: 28px;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 55px;
+  ${props => props.marginVertical && `margin: ${props.marginVertical}px 0`};
+  border-radius: 28px;
+  background-color: ${props =>
+    props.bgColor ? props.bgColor : colors.primary};
+
+  /* Ghost Button */
+  ${props => props.ghost && `border: 1px ${props.textColor};`}
 `;
 
 const Text = styled.Text`
   font-family: ${fonts.bold};
   font-size: 14px;
-  color: white;
+  color: ${props => (props.textColor ? props.textColor : "white")};
   text-transform: uppercase;
 `;

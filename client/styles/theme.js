@@ -1,6 +1,8 @@
 const colors = {
   primary: "#5FE899",
-  accent: "#FF7F5F",
+  secondary: "#63B9E2",
+  /*secondary: "#63B9E2",*/
+  error: "red",
   whiteGrey: "#F7F7F7",
   lightGrey: "#E3E3E3",
   mediumGrey: "#C7C7C7",
@@ -27,7 +29,8 @@ const fonts = {
 
 const sizes = {
   mainRadius: 20,
-  mediumRadius: 15
+  mediumRadius: 15,
+  smallRadius: 8
 };
 
 export { colors, paddings, fonts, sizes };

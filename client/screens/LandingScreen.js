@@ -6,32 +6,33 @@ import styled from "styled-components";
 import { colors, paddings, fonts } from "../styles/theme";
 
 // Components import
-import Button from "../components/Button";
+import { Container, Button, TextLink } from "../components";
 
 const LandingScreen = ({ navigation }) => {
   return (
-    <Container>
-      <Logo onPress={() => navigation.navigate("Signup")}>tomo</Logo>
+    <Container center login safeArea>
+      <Logo>tomo</Logo>
       <Text>Lorem Ipsum Dolor</Text>
-      <Slider onPress={() => navigation.navigate("Signup")}></Slider>
+      <Slider></Slider>
       <Button
-        text="Login"
-        bgColor={colors.primary}
         textColor="white"
         marginVertical={10}
         onPress={() => navigation.navigate("LoginScreen")}
-      />
+      >
+        Login
+      </Button>
       <Button
-        shadow
-        text="Create an account"
+        ghost
         bgColor="white"
         textColor={colors.mediumGrey}
         marginVertical={10}
         onPress={() => navigation.navigate("SignupScreen")}
-      />
-      <TouchableOpacity>
-        <FooterText>Terms and conditions</FooterText>
-      </TouchableOpacity>
+      >
+        Create an account
+      </Button>
+      <TextLink marginTop={20} onPress={() => {}}>
+        Terms and conditions
+      </TextLink>
     </Container>
   );
 };
@@ -45,13 +46,6 @@ LandingScreen.navigationOptions = {
 };
 
 // Styles
-
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  padding: ${paddings.login}px;
-  padding-top: ${paddings.safeAreaTop}px;
-`;
 
 const Logo = styled.Text`
   font-family: ${fonts.black};
@@ -71,10 +65,4 @@ const Slider = styled.View`
   height: 400px;
   margin: 20px;
   background-color: ${colors.lightGrey};
-`;
-
-const FooterText = styled.Text`
-  margin-top: 30px;
-  font-size: 14px;
-  color: ${colors.mediumGrey};
 `;

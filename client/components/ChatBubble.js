@@ -21,6 +21,7 @@ const ChatBubble = props => {
 export default ChatBubble;
 
 const Block = styled.View`
+  /* Align bubble on the right side + auto-size with content */
   flex-shrink: 1;
   align-self: flex-end;
   ${props => props.contactBubble && "align-self: flex-start"};

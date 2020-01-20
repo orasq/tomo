@@ -12,15 +12,15 @@ const Tag = props => {
     const iconColor = common ? "white" : colors.mediumGrey;
 
     switch (type) {
-      case "temp":
+      case "geoStatus":
         return <Feather name="clock" size={15} color={colors.primary} />;
-      case "home":
+      case "city":
         return <Entypo name="home" size={15} color={iconColor} />;
       case "job":
         return <Ionicons name="md-briefcase" size={15} color={iconColor} />;
       case "character":
         return <MaterialIcons name="face" size={15} color={iconColor} />;
-      case "language":
+      case "languages":
         return <MaterialIcons name="language" size={15} color={iconColor} />;
       case "smoke":
         return (
@@ -33,13 +33,15 @@ const Tag = props => {
 
   return (
     <Container {...props}>
-      <Icon>{renderIcon()}</Icon>
+      {renderIcon()}
       <Text {...props}>{children}</Text>
     </Container>
   );
 };
 
 export default Tag;
+
+// Styles
 
 const Container = styled.View`
   flex-direction: row;
@@ -53,19 +55,17 @@ const Container = styled.View`
   border-radius: 14px;
   ${props => props.common && "border: none"};
   ${props => props.common && `background-color: ${colors.primary}`};
-  ${props => props.type === "temp" && `border-color: ${colors.primary}`};
-  ${props => props.type === "temp" && "border-style: dashed"};
+  ${props => props.type === "geoStatus" && `border-color: ${colors.primary}`};
+  ${props => props.type === "geoStatus" && "border-style: dashed"};
 `;
-
-const Icon = styled.Text``;
 
 const Text = styled.Text`
   ${props => props.type && "padding-left: 8px"};
   font-family: ${fonts.semibold};
+  ${props => props.type === "geoStatus" && `font-family: ${fonts.bold}`};
   font-size: 13px;
   line-height: 28;
   color: ${colors.darkGrey};
   ${props => props.common && "color: white"};
-  ${props => props.type === "temp" && `color: ${colors.primary}`};
-  ${props => props.type === "temp" && `font-family: ${fonts.bold}`};
+  ${props => props.type === "geoStatus" && `color: ${colors.primary}`};
 `;

@@ -1,11 +1,13 @@
-import Button from "./Button";
-import Input from "./Input";
-import UserCard from "./UserCard";
-import InterestTag from "./InterestTag";
-import UserStatusTag from "./UserStatusTag";
-import HomeHeader from "./HomeHeader";
 import Container from "./Container";
-import ContainerWithHeader from "./ContainerWithHeader";
+import Button from "./Button";
+import TextLink from "./TextLink";
+import Input from "./Input";
+import RadioButton from "./RadioButton";
+import ErrorText from "./ErrorText";
+import UserCard from "./UserCard";
+import UserCardInterestTag from "./UserCardInterestTag";
+import UserCardStatusTag from "./UserCardStatusTag";
+import HomeHeader from "./HomeHeader";
 import ProfileImage from "./ProfileImage";
 import BigInterestTag from "./BigInterestTag";
 import Tag from "./Tag";
@@ -14,16 +16,20 @@ import Title from "./Title";
 import UserProfilePlan from "./UserProfilePlan";
 import Conversation from "./Conversation";
 import ChatBubble from "./ChatBubble";
+import ProfileMainInfos from "./ProfileMainInfos";
+import ProfilePlans from "./ProfilePlans";
 
 export {
-  Button,
-  Input,
-  UserCard,
-  InterestTag,
-  UserStatusTag,
-  HomeHeader,
   Container,
-  ContainerWithHeader,
+  Button,
+  TextLink,
+  Input,
+  RadioButton,
+  ErrorText,
+  UserCard,
+  UserCardInterestTag,
+  UserCardStatusTag,
+  HomeHeader,
   ProfileImage,
   BigInterestTag,
   Tag,
@@ -31,5 +37,7 @@ export {
   Title,
   UserProfilePlan,
   Conversation,
-  ChatBubble
+  ChatBubble,
+  ProfileMainInfos,
+  ProfilePlans
 };

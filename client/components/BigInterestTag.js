@@ -23,6 +23,8 @@ const BigInterestTag = props => {
 
 export default BigInterestTag;
 
+// Styles
+
 const Container = styled.View`
   justify-content: center;
   align-items: center;

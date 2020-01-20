@@ -7,7 +7,7 @@ import axios from "axios";
 import { colors, fonts } from "../styles/theme";
 
 // Components import
-import { ContainerWithHeader, Conversation } from "../components";
+import { Container, Conversation } from "../components";
 
 const MessagesScreen = ({ navigation }) => {
   const [fakeUsers, setFakeUsers] = useState([]);
@@ -28,7 +28,7 @@ const MessagesScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <ContainerWithHeader>
+    <Container withHeader>
       {loading ? (
         <ActivityIndicator size="large" color={colors.mediumGrey} />
       ) : (
@@ -36,9 +36,7 @@ const MessagesScreen = ({ navigation }) => {
           data={fakeUsers}
           renderItem={({ item }) => (
             <Conversation
-              onPress={() =>
-                navigation.navigate("ChatScreen", { userInfo: item })
-              }
+              onPress={() => navigation.navigate("ChatScreen", { user: item })}
               avatar={item.photo}
               userName={item.name}
               excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit."
@@ -48,31 +46,12 @@ const MessagesScreen = ({ navigation }) => {
           keyExtractor={item => item.phone}
         />
       )}
-    </ContainerWithHeader>
+    </Container>
   );
 };
 
 export default MessagesScreen;
 
 MessagesScreen.navigationOptions = {
-  title: "Messages",
-  headerTintColor: colors.darkGrey,
-  headerTitleStyle: {
-    fontWeight: "200" /* use to be able to set custom font */,
-    fontFamily: fonts.bold
-  },
-  headerStyle: {
-    /* remove default shadow */
-    shadowColor: "#5bc4ff",
-    shadowOpacity: 0,
-    shadowOffset: {
-      height: 0
-    },
-    shadowRadius: 0,
-    elevation: 1
-  }
+  title: "Messages"
 };
-
-const Text = styled.Text`
-  color: red;
-`;

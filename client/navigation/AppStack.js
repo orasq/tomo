@@ -1,18 +1,16 @@
 import React from "react";
+import { Platform } from "react-native";
 import styled from "styled-components";
-import { createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import {
-  createBottomTabNavigator,
-  createMaterialTopTabNavigator
-} from "react-navigation-tabs";
+import { createBottomTabNavigator } from "react-navigation-tabs";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Theme
-import { colors, fonts } from "../styles/theme";
+import { colors, fonts, paddings } from "../styles/theme";
 
 // Components
 import { TomoLogo } from "../components/Icons";
+import { BackArrow } from "../components/Icons";
 
 //Screens
 import UsersScreen from "../screens/UsersScreen";
@@ -81,7 +79,27 @@ const AccountStack = createStackNavigator(
     AccountSettingsScreen,
     AccountProfileScreen
   },
-  { headerLayoutPreset: "center" }
+  {
+    headerLayoutPreset: "center",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "white",
+        borderBottomColor: colors.lightGrey,
+        elevation: 1 // for android
+      },
+      headerTintColor: colors.darkGrey,
+      headerTitleStyle: {
+        fontWeight: "200" /* use to be able to set custom font */,
+        fontFamily: fonts.bold
+      },
+      headerBackImage: <BackArrow />,
+      headerBackTitle: null,
+      headerLeftContainerStyle: {
+        alignItems: "center",
+        marginLeft: Platform.OS === "ios" ? paddings.main : 0
+      }
+    }
+  }
 );
 
 AccountStack.navigationOptions = ({ navigation }) => {
@@ -108,9 +126,30 @@ AccountStack.navigationOptions = ({ navigation }) => {
 const MessagesStack = createStackNavigator(
   {
     MessagesScreen,
-    ChatScreen
+    ChatScreen,
+    UsersProfileScreen
   },
-  { headerLayoutPreset: "center" }
+  {
+    headerLayoutPreset: "center",
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "white",
+        borderBottomColor: colors.lightGrey,
+        elevation: 1 // for android
+      },
+      headerTintColor: colors.darkGrey,
+      headerTitleStyle: {
+        fontWeight: "200" /* use to be able to set custom font */,
+        fontFamily: fonts.bold
+      },
+      headerBackImage: <BackArrow />,
+      headerBackTitle: null,
+      headerLeftContainerStyle: {
+        alignItems: "center",
+        marginLeft: Platform.OS === "ios" ? paddings.main : 0
+      }
+    }
+  }
 );
 
 MessagesStack.navigationOptions = ({ navigation }) => {
@@ -135,23 +174,6 @@ MessagesStack.navigationOptions = ({ navigation }) => {
   };
 };
 
-// Notification Bubble
-
-const MessageIconWrap = styled.View``;
-const NotificationBubble = styled.Text`
-  position: absolute;
-  top: -4px;
-  right: -6px;
-  padding: 1px 6px;
-  background-color: ${colors.primary};
-  border-radius: 10px;
-  border: 1px white;
-  font-family: ${fonts.bold};
-  font-size: 10px;
-  color: white;
-  z-index: 100;
-`;
-
 // Bottom Tab Navigator
 
 export default AppStack = createBottomTabNavigator(
@@ -164,3 +186,22 @@ export default AppStack = createBottomTabNavigator(
     tabBarOptions: { showLabel: false, style: { height: 70 } }
   }
 );
+
+// Styles
+
+// Notification Bubble
+const MessageIconWrap = styled.View``;
+const NotificationBubble = styled.Text`
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  padding: 1px 6px;
+  background-color: ${colors.primary};
+  border-radius: 10px;
+  border: 1px white;
+  font-family: ${fonts.bold};
+  font-size: 10px;
+  color: white;
+  overflow: hidden;
+  z-index: 100;
+`;

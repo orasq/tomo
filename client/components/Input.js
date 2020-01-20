@@ -20,6 +20,9 @@ const Input = props => {
   // States
   const [toggleSecure, setToggleSecure] = useState(false);
 
+  const isSecure = toggleSecure ? false : secure;
+
+  // Password visibility toggle button
   const renderToggle = () => {
     if (secure) {
       return (
@@ -34,10 +37,8 @@ const Input = props => {
     }
   };
 
-  const isSecure = toggleSecure ? false : secure;
-
   return (
-    <Wrapper style={{ marginVertical: marginVertical }}>
+    <Wrapper marginVertical={marginVertical}>
       <Label error={error}>{label}</Label>
       <InputField
         error={error}
@@ -58,6 +59,7 @@ export default Input;
 
 const Wrapper = styled.View`
   width: 100%;
+  ${props => props.marginVertical && `margin: ${props.marginVertical}px 0`};
 `;
 
 const InputField = styled.TextInput`
@@ -67,8 +69,8 @@ const InputField = styled.TextInput`
   padding-right: 10px;
   border-width: 0;
   border-bottom-width: 1px;
-  border-color: ${colors.lightGrey};
-  ${props => props.error && "border-color: red"};
+  border-color: ${props =>
+    props.error ? `${colors.error}` : `${colors.lightGrey}`};
   font-size: 16px;
   font-weight: 300;
   color: ${colors.darkGrey};
@@ -77,7 +79,7 @@ const InputField = styled.TextInput`
 
 const ToggleIcon = styled.Text`
   position: absolute;
-  top: 32px;
+  top: 50%;
   right: 0;
 `;
 

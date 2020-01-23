@@ -40,24 +40,23 @@ const AccountProfilScreen = () => {
     {
       id: 3,
       url:
-        "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
+        "https://www.jardiner-malin.fr/wp-content/uploads/2018/10/olivier.jpg"
     },
     {
       id: 4,
-      url:
-        "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
-    },
-    {
-      id: 5,
-      url:
-        "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
-    },
-    {
-      id: 6,
-      url:
-        "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
+      url: "https://media.gerbeaud.net/2011/01/olivier.jpg"
     }
   ];
+
+  const processedPictures = () => {
+    const newArray = fakePictures;
+    const numberOfImagesToAdd = 6 - fakePictures.length;
+
+    for (i = 0; i < numberOfImagesToAdd; i++) {
+      newArray.push({ id: newArray.length + 1 });
+    }
+    return newArray;
+  };
 
   const fakeInfosTags = {
     geoStatus: "Leaving in 4 days",
@@ -136,7 +135,7 @@ const AccountProfilScreen = () => {
           flexGrow: 1
         }}
         columnWrapperStyle={{ justifyContent: "space-between" }}
-        data={fakePictures}
+        data={processedPictures()}
         renderItem={({ item }) => <ProfileGalleryImage url={item.url} />}
         keyExtractor={item => item.id}
       />

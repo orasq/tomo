@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Button from "./Button";
+import EditButton from "./EditButton";
 import TextLink from "./TextLink";
 import Input from "./Input";
 import RadioButton from "./RadioButton";
@@ -16,12 +17,16 @@ import Title from "./Title";
 import UserProfilePlan from "./UserProfilePlan";
 import Conversation from "./Conversation";
 import ChatBubble from "./ChatBubble";
+import PreviewProfileButton from "./PreviewProfileButton";
 import ProfileMainInfos from "./ProfileMainInfos";
 import ProfilePlans from "./ProfilePlans";
+import ProfileInterests from "./ProfileInterests";
+import ProfileGalleryImage from "./ProfileGalleryImage";
 
 export {
   Container,
   Button,
+  EditButton,
   TextLink,
   Input,
   RadioButton,
@@ -38,6 +43,9 @@ export {
   UserProfilePlan,
   Conversation,
   ChatBubble,
+  PreviewProfileButton,
   ProfileMainInfos,
-  ProfilePlans
+  ProfilePlans,
+  ProfileInterests,
+  ProfileGalleryImage
 };

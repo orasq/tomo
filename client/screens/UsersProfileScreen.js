@@ -1,36 +1,103 @@
 import React from "react";
-import { TouchableOpacity } from "react-native";
-import styled from "styled-components";
-import { Entypo, MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
 // Components import
 import {
   Container,
   BigInterestTag,
   ProfileImage,
-  Tag,
   Divider,
   Title,
   ProfileMainInfos,
-  ProfilePlans
+  ProfilePlans,
+  ProfileInterests
 } from "../components";
-
-// Theme
-import { colors, fonts } from "../styles/theme";
 
 const UsersProfileScreen = props => {
   const { navigation } = props;
 
   const user = navigation.getParam("userInfo");
 
+  const fakeInfosTags = {
+    geoStatus: "Leaving in 4 days",
+    city: "Brussels, Belgium",
+    job: "Graphic Designer",
+    character: "Introvert",
+    languages: ["French", "Spanish"],
+    smoke: ";)"
+  };
+
+  const fakeDescription = {
+    description:
+      "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
+  };
+
+  const fakePlans = [
+    { id: "1", plan: "Have a drink", image: user.photo },
+    { id: "2", plan: "Discover the city", image: user.photo },
+    {
+      id: "3",
+      plan: "Go to a concert: Denzel Curry (20/12/2019)",
+      image: user.photo
+    },
+    { id: "4", plan: "Learn Spanish", image: user.photo }
+  ];
+
+  const fakeInterests = [
+    {
+      category: "music",
+      order: 1,
+      elements: [
+        "Arctic Monkeys",
+        "Eminem",
+        "DJ Furax",
+        "Four Tet",
+        "Kojak Klack",
+        "System of a Down",
+        "Sam Smith",
+        "King Gizzard and the Lizard Wizard",
+        "MF DOOM",
+        "Camille Poteau",
+        "Jeanne Dark",
+        "Petrocious",
+        "Koba Lad",
+        "Union",
+        "Muse",
+        "Celophane",
+        "Ptit Biscuit",
+        "Clark",
+        "Aphex Twin"
+      ]
+    },
+    {
+      category: "sport",
+      order: 2,
+      elements: ["Football", "Running", "Fitness", "Fc Barcelona"]
+    },
+    {
+      category: "books",
+      order: 3,
+      elements: [
+        "Le moniteur automobile",
+        "L'étranger",
+        "Harry Potter et la Croupe de Feu",
+        "Allez les Bleus !"
+      ]
+    }
+  ];
+
   return (
     <Container safeArea>
       <ProfileImage images={user.photo} navigation={navigation} />
       <BigInterestTag number={user.age} />
-      <ProfileMainInfos user={user} />
+      <ProfileMainInfos
+        user={user}
+        data={fakeInfosTags}
+        description={fakeDescription}
+      />
       <Divider />
-      <ProfilePlans user={user} />
+      <ProfilePlans user={user} data={fakePlans} />
       <Divider />
+
       <Title colorText="darkGrey" center h2>
         Interests
       </Title>
@@ -38,53 +105,16 @@ const UsersProfileScreen = props => {
         Lorem ipsum dolor sit amet
       </Title>
       {/* Music */}
-      <Title colorText="darkGrey" marginTop={20} marginBottom={20} center h3>
-        <MaterialCommunityIcons name="music" size={20} /> Music
-      </Title>
-      <TagsWrap>
-        <Tag>Arctic Monkeys</Tag>
-        <Tag>Eminem</Tag>
-        <Tag common>DJ Furax</Tag>
-        <Tag>Four Tet</Tag>
-        <Tag>Kojak Klack</Tag>
-        <Tag common>System of a Down</Tag>
-        <Tag common>Sam Smith</Tag>
-        <Tag>King Gizzard and the Lizard Wizard</Tag>
-        <Tag>Taylor Swift</Tag>
-        <Tag>MF DOOM</Tag>
-        <Tag>Camille Poteau</Tag>
-        <Tag common>Jeanne D'Arc</Tag>
-        <Tag>Petrocious</Tag>
-        <Tag common>Koba Lad</Tag>
-        <Tag>Union</Tag>
-        <Tag>Muse</Tag>
-        <Tag>Celophane</Tag>
-        <Tag>Ptit Biscuit</Tag>
-        <Tag common>Clark</Tag>
-        <Tag>Aphex Twin</Tag>
-      </TagsWrap>
-      <Divider />
-      {/* Sports */}
-      <Title colorText="darkGrey" marginBottom={20} center h3>
-        <Ionicons name="ios-football" size={20} /> Sports
-      </Title>
-      <TagsWrap>
-        <Tag>Football</Tag>
-        <Tag>Running</Tag>
-        <Tag common>Bodybuilding</Tag>
-        <Tag>Fc Barcelona</Tag>
-      </TagsWrap>
-      <Divider />
-      {/* Books */}
-      <Title colorText="darkGrey" marginBottom={20} center h3>
-        <Entypo name="book" size={20} /> Literature
-      </Title>
-      <TagsWrap>
-        <Tag>Le moniteur automobile</Tag>
-        <Tag>L'etranger</Tag>
-        <Tag common>Harry Potter et la Croupe de Feu</Tag>
-        <Tag>Allez les Bleus !</Tag>
-      </TagsWrap>
+      {fakeInterests.map((item, index) => {
+        return (
+          <ProfileInterests
+            key={item.order}
+            category={item.category}
+            elements={item.elements}
+            last={index === fakeInterests.length - 1 ? true : false}
+          />
+        );
+      })}
     </Container>
   );
 };
@@ -94,12 +124,3 @@ export default UsersProfileScreen;
 UsersProfileScreen.navigationOptions = {
   header: null
 };
-
-// Styles
-
-const TagsWrap = styled.View`
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 10px;
-`;

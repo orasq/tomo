@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Entypo, Ionicons } from "@expo/vector-icons";
 
 // Theme
-import { colors, sizes } from "../styles/theme";
+import { sizes } from "../styles/theme";
 
 const ProfilImage = props => {
   const { images, navigation } = props;

@@ -7,7 +7,7 @@ import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import { colors, sizes, paddings } from "../styles/theme";
 
 // Components import
-import { ChatBubble } from "../components";
+import { ChatBubble, PreviewProfileButton } from "../components";
 
 const ChatScreen = () => {
   // Keyboard handling
@@ -116,14 +116,12 @@ ChatScreen.navigationOptions = ({ navigation }) => {
   return {
     title: user.name,
     headerRight: (
-      <HeaderLinkWrapper
+      <PreviewProfileButton
+        user={user}
         onPress={() =>
           navigation.navigate("UsersProfileScreen", { userInfo: user })
         }
-      >
-        <HeaderLinkIcon name="eye" size={14} color="white" />
-        <HeaderLinkAvatar source={{ uri: user.photo }} />
-      </HeaderLinkWrapper>
+      />
     ),
     headerRightContainerStyle: {
       alignItems: "center",
@@ -131,6 +129,8 @@ ChatScreen.navigationOptions = ({ navigation }) => {
     }
   };
 };
+
+// Styles
 
 const ChatScreenContainer = styled.View`
   flex: 1;
@@ -174,34 +174,7 @@ const InputButton = styled.View`
 
 const Text = styled.Text``;
 
-const HeaderLinkWrapper = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: ${sizes.smallRadius};
-  background-color: #000000;
-  overflow: hidden;
-`;
-
-const HeaderLinkAvatar = styled.Image`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: ${colors.lightGrey};
-  border-color: ${colors.whiteGrey};
-  opacity: 0.5;
-`;
-
-const HeaderLinkIcon = styled(FontAwesome)`
-  z-index: 10;
-`;
-
 // Fake Data
-
-// const fakeChatMessages = [];
 
 const fakeChatMessages = [
   {

@@ -1,48 +1,33 @@
 import React from "react";
-import { FlatList } from "react-native";
 import styled from "styled-components";
 import { Entypo } from "@expo/vector-icons";
 
 // Components import
 import Tag from "./Tag";
+import EditButton from "./EditButton";
 
 // Theme
 import { colors, fonts } from "../styles/theme";
 import { ScrollView } from "react-native-gesture-handler";
 
 const ProfileMainInfos = props => {
-  const { user } = props;
-
-  const fakeInfosTop = {
-    name: user.name,
-    age: user.age
-  };
-
-  const fakeInfosTags = {
-    geoStatus: "Leaving in 4 days",
-    city: "Brussels, Belgium",
-    job: "Graphic Designer",
-    character: "Introvert",
-    languages: ["French", "Spanish"],
-    smoke: ";)"
-  };
-
-  const fakeDescription = {
-    description:
-      "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
-  };
+  const { user, data, description, self } = props;
 
   return (
     <Wrapper>
       <TopInfoWrap>
         <NameWrap>
-          <Name>{fakeInfosTop.name}</Name>
-          <Age> - {fakeInfosTop.age}</Age>
+          <Name>{user.name}</Name>
+          <Age> - {user.age}</Age>
         </NameWrap>
-        <PositionWrap>
-          <Entypo name="location-pin" size={20} color={colors.mediumGrey} />
-          <Position>13 km</Position>
-        </PositionWrap>
+        {self ? (
+          <EditButton />
+        ) : (
+          <PositionWrap>
+            <Entypo name="location-pin" size={20} color={colors.mediumGrey} />
+            <Position>13 km</Position>
+          </PositionWrap>
+        )}
       </TopInfoWrap>
       <ScrollView
         contentContainerStyle={{
@@ -54,7 +39,7 @@ const ProfileMainInfos = props => {
         }}
       >
         {// convert 'object' to 'array', to be able to use map()
-        Object.entries(fakeInfosTags).map(item => {
+        Object.entries(data).map(item => {
           // [0] gives us the 'key' (ex: geoStatus, city, ...)
           let key = item[0];
           // [1] gives us the 'value' (ex: leaving in 4 days, Brussels, ...)
@@ -78,7 +63,7 @@ const ProfileMainInfos = props => {
           }
         })}
       </ScrollView>
-      <Description>{fakeDescription.description}</Description>
+      <Description>{description.description}</Description>
     </Wrapper>
   );
 };

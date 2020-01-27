@@ -8,7 +8,7 @@ import Title from "./Title";
 import EditButton from "./EditButton";
 
 const ProfilePlans = props => {
-  const { user, data, self } = props;
+  const { image, name, data, self } = props;
 
   const renderEditButton = () => {
     if (self) {
@@ -25,7 +25,9 @@ const ProfilePlans = props => {
         Plans
       </Title>
       <Title colorText="mediumGrey" center h4>
-        {user.name} is looking for friends to ...
+        {self
+          ? "You're looking for friends to ..."
+          : `${name} is looking for friends to ...`}
       </Title>
       <FlatList
         horizontal={false}
@@ -35,7 +37,7 @@ const ProfilePlans = props => {
         }}
         data={data}
         renderItem={({ item }) => (
-          <UserProfilePlan image={item.image}>{item.plan}</UserProfilePlan>
+          <UserProfilePlan image={image}>{item.plan}</UserProfilePlan>
         )}
         keyExtractor={item => item.id}
       />

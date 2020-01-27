@@ -11,14 +11,14 @@ import { colors, fonts } from "../styles/theme";
 import { ScrollView } from "react-native-gesture-handler";
 
 const ProfileMainInfos = props => {
-  const { user, data, description, self } = props;
+  const { self, data } = props;
 
   return (
     <Wrapper>
       <TopInfoWrap>
         <NameWrap>
-          <Name>{user.name}</Name>
-          <Age> - {user.age}</Age>
+          <Name>{data.name}</Name>
+          <Age> - {data.age}</Age>
         </NameWrap>
         {self ? (
           <EditButton />
@@ -63,7 +63,7 @@ const ProfileMainInfos = props => {
           }
         })}
       </ScrollView>
-      <Description>{description.description}</Description>
+      <Description>{data.description}</Description>
     </Wrapper>
   );
 };

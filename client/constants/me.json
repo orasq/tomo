@@ -84,3 +84,41 @@
   "friends": [],
   "conversations": []
 }
+
+
+{
+  "categories": [
+    { 
+    "id": "0",
+    "category": "concert",
+    "plans": {
+      "id": 123,
+      "plan": "Go to concert"
+      }
+    },
+    { 
+      "id": "0",
+      "category": "concert",
+      "plans": {
+        "id": 123,
+        "plan": "Go to concert"
+      }
+    }
+    { 
+      "id": "0",
+      "category": "concert",
+      "plans": {
+        "id": 123,
+        "plan": "Go to concert"
+      }
+    },
+    { 
+      "id": "0",
+      "category": "concert",
+      "plans": {
+        "id": 123,
+        "plan": "Go to concert"
+      }
+    }
+  ]
+}

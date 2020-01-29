@@ -1,35 +1,18 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
-const mongoose = require('mongoose');
-const cors = require('cors');
+// Express server init
+let express = require("express");
+let app = express();
 
-// Import Schema
-const schema = require('./schema/schema');
+// Enable usage of 'Environment Variables'
+const dotenv = require("dotenv");
+dotenv.config();
 
-// Init express server
-const app = express();
-
-// Allow Cross-Origin requests
-app.use(cors());
-
-// To fix all deprecation warnings
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-// Connect to MongoDB Atlas DB
-mongoose.connect('mongodb+srv://todoAppUser:todoappuser@cluster0-ey2z3.mongodb.net/GraphQLNetNinja?retryWrites=true&w=majority');
-mongoose.connection.once('open', () => {
-    console.log('Connected to DB');
-});
-
-// Tell express to use GraphQL on this route (+ options)
-app.use('/graphql', graphqlHTTP({
-    schema: schema,
-    graphiql: true
-}));
-
-// Express listening on port ...
-app.listen(4000, () => {
-    console.log('Now listening for requests on port 4000');
-});
+// DB config
+let mongodb = require("mongodb");
+mongodb.connect(
+  process.env.CONNECTIONSTRING,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  function(err, client) {
+    db = client.db();
+    app.listen(3000);
+  }
+);

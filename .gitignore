@@ -2,6 +2,7 @@ client/node_modules/**/*
 server/node_modules/**/*
 client/.expo/*
 client/.expo-shared/*
+server/.env
 .expo/*
 .expo-shared/*
 npm-debug.*

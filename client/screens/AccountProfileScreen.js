@@ -22,10 +22,6 @@ import {
 const AccountProfilScreen = () => {
   // States
   const [userInfo, setUserInfo] = useState(userJSON.infos);
-  const [userTags, setUserTags] = useState(userJSON.infos);
-  const [userDescription, setUserDescription] = useState(
-    userJSON.infos.description
-  );
   const [userPictures, setUserPictures] = useState(userJSON.pictures);
   const [userPlans, setUserPlans] = useState(userJSON.plans);
   const [userInterests, setUserInterests] = useState(userJSON.interests);

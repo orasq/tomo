@@ -9,8 +9,10 @@ const {
 } = graphql;
 
 // Models
-const User = require("../models/User");
-const Personality = require("../models/Personality");
+const UserModel = require("../models/User");
+const PersonalityModel = require("../models/Personality");
+const LanguageModel = require("../models/Language");
+const LanguageLevelModel = require("../models/LanguageLevel");
 
 // Object Types
 
@@ -27,9 +29,11 @@ const UserType = new GraphQLObjectType({
     personality: {
       type: PersonalityType,
       resolve(parent, args) {
-        return Personality.findById(parent.personalityId);
+        return PersonalityModel.findById(parent.personalityId);
       }
-    }
+    },
+    description: { type: GraphQLString },
+    languages: { type: new GraphQLList(UserLanguageType) }
   })
 });
 
@@ -38,6 +42,41 @@ const PersonalityType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     type: { type: GraphQLString }
+  })
+});
+
+const UserLanguageType = new GraphQLObjectType({
+  name: "UserLanguage",
+  fields: () => ({
+    id: { type: GraphQLID },
+    language: {
+      type: LanguageType,
+      resolve(parent, args) {
+        return LanguageModel.findById(parent.languageId);
+      }
+    },
+    level: {
+      type: LanguageLevelType,
+      resolve(parent, args) {
+        return LanguageLevelModel.findById(parent.levelId);
+      }
+    }
+  })
+});
+
+const LanguageType = new GraphQLObjectType({
+  name: "Language",
+  fields: () => ({
+    id: { type: GraphQLID },
+    language: { type: GraphQLString }
+  })
+});
+
+const LanguageLevelType = new GraphQLObjectType({
+  name: "LanguageLevel",
+  fields: () => ({
+    id: { type: GraphQLID },
+    level: { type: GraphQLString }
   })
 });
 
@@ -50,20 +89,7 @@ const RootQuery = new GraphQLObjectType({
       type: UserType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return User.findById(args.id);
-      }
-    },
-    personality: {
-      type: PersonalityType,
-      args: { id: { type: GraphQLID } },
-      resolve(parent, args) {
-        return Personality.findById(args.id);
-      }
-    },
-    personalities: {
-      type: new GraphQLList(PersonalityType),
-      resolve(parent, args) {
-        return Personality.find({});
+        return UserModel.findById(args.id);
       }
     }
   }

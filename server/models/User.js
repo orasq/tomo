@@ -6,15 +6,23 @@ const languagesSchema = new Schema({
   levelId: String
 });
 
+const geoLocSchema = new Schema({
+  lat: String,
+  long: String
+});
+
 const userSchema = new Schema({
   email: String,
   password: String,
   name: String,
   birthdate: Number,
   city: String,
-  job: String,
   personalityId: String,
+  job: String,
+  description: String,
   languages: [languagesSchema],
-  description: String
+  smokingId: String,
+  lastGeoLocalisation: [geoLocSchema]
 });
+
 module.exports = mongoose.model("user", userSchema);

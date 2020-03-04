@@ -11,6 +11,8 @@ const {
 // Models
 const UserModel = require("../models/User");
 const PersonalityModel = require("../models/Personality");
+const LanguageModel = require("../models/Language");
+const LanguageLevelModel = require("../models/LanguageLevel");
 
 // Object Types
 
@@ -30,7 +32,10 @@ const UserType = new GraphQLObjectType({
         return PersonalityModel.findById(parent.personalityId);
       }
     },
-    description: { type: GraphQLString }
+    description: { type: GraphQLString },
+    languages: { type: new GraphQLList(LanguagesType) },
+    signupDate: { type: GraphQLString },
+    lastGeoLocalisation: { type: LastGeoLocType }
   })
 });
 
@@ -39,6 +44,48 @@ const PersonalityType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     type: { type: GraphQLString }
+  })
+});
+
+const LanguagesType = new GraphQLObjectType({
+  name: "Languages",
+  fields: () => ({
+    language: {
+      type: LanguageType,
+      resolve(parent, args) {
+        return LanguageModel.findById(parent.languageId);
+      }
+    },
+    level: {
+      type: LanguageLevelType,
+      resolve(parent, args) {
+        return LanguageLevelModel.findById(parent.levelId);
+      }
+    }
+  })
+});
+
+const LanguageType = new GraphQLObjectType({
+  name: "Language",
+  fields: () => ({
+    id: { type: GraphQLID },
+    language: { type: GraphQLString }
+  })
+});
+
+const LanguageLevelType = new GraphQLObjectType({
+  name: "LanguageLevel",
+  fields: () => ({
+    id: { type: GraphQLID },
+    level: { type: GraphQLString }
+  })
+});
+
+const LastGeoLocType = new GraphQLObjectType({
+  name: "LastGeoLoc",
+  fields: () => ({
+    lat: { type: GraphQLString },
+    long: { type: GraphQLString }
   })
 });
 

@@ -16,22 +16,21 @@ const UsersScreen = ({ navigation }) => {
 
   useEffect(() => {
     axios
-      .get("https://uinames.com/api/?ext&amount=200")
-      .then(function(response) {
+      .get("https://randomuser.me/api/?results=200")
+      .then((response) => {
         // handle success
-        setFakeUsers(response.data);
+        setFakeUsers(response.data.results);
         setLoading(false);
       })
-      .catch(function(error) {
+      .catch((error) => {
         // handle error
         console.log(error);
       });
   }, []);
 
-  // Check scroll position and pass it to HomeHeader
+  // Check scroll position and pass it to HomeHeader for hiding purposes
   const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
-
-  const handleScroll = e => {
+  const handleScroll = (e) => {
     setCurrentScrollPosition(Math.floor(e.nativeEvent.contentOffset.y));
   };
 
@@ -53,7 +52,7 @@ const UsersScreen = ({ navigation }) => {
           numColumns={2}
           contentContainerStyle={{
             flexGrow: 1,
-            paddingTop: 70 /* = HomeHeader component height */
+            paddingTop: 70 /* = HomeHeader component height */,
           }}
           columnWrapperStyle={{ justifyContent: "space-between" }}
           data={fakeUsers}
@@ -62,12 +61,12 @@ const UsersScreen = ({ navigation }) => {
               onPress={() =>
                 navigation.navigate("UsersProfileScreen", { userInfo: item })
               }
-              name={item.name}
-              interests={item.age}
-              profileImage={item.photo}
+              name={item.name.first}
+              interests={item.dob.age}
+              profileImage={item.picture.large}
             />
           )}
-          keyExtractor={item => item.phone}
+          keyExtractor={(item) => item.phone}
         />
       )}
     </Container>
@@ -77,7 +76,7 @@ const UsersScreen = ({ navigation }) => {
 export default UsersScreen;
 
 UsersScreen.navigationOptions = {
-  header: null
+  header: null,
 };
 
 // Styles

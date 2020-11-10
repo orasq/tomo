@@ -16,7 +16,7 @@ import {
   ProfileGalleryImage,
   ProfileMainInfos,
   ProfilePlans,
-  ProfileInterests
+  ProfileInterests,
 } from "../components";
 
 const AccountProfilScreen = () => {
@@ -26,18 +26,11 @@ const AccountProfilScreen = () => {
   const [userPlans, setUserPlans] = useState(userJSON.plans);
   const [userInterests, setUserInterests] = useState(userJSON.interests);
 
-  const user = {
-    name: "Olivier",
-    age: 31,
-    photo:
-      "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
-  };
-
   const processedPictures = () => {
     const newArray = userPictures;
     const numberOfImagesToAdd = 6 - userPictures.length;
 
-    for (i = 0; i < numberOfImagesToAdd; i++) {
+    for (var i = 0; i < numberOfImagesToAdd; i++) {
       newArray.push({ id: newArray.length + 1 });
     }
     return newArray;
@@ -45,23 +38,20 @@ const AccountProfilScreen = () => {
 
   return (
     <Container safeArea>
+      {/* Generate gallery of images */}
       <ProfileGallery
         showsVerticalScrollIndicator={false}
         numColumns={3}
         contentContainerStyle={{
-          flexGrow: 1
+          flexGrow: 1,
         }}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         data={processedPictures()}
         renderItem={({ item }) => <ProfileGalleryImage url={item.url} />}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
       />
-      {/* <ProfileMainInfos
-        self
-        user={user}
-        data={fakeInfosTags}
-        description={fakeDescription}
-      /> */}
+      {/* Main user's info */}
+      <ProfileMainInfos self data={userInfo} />
       <Divider />
       <ProfilePlans
         self
@@ -70,14 +60,14 @@ const AccountProfilScreen = () => {
         data={userPlans}
       />
       <Divider />
-
+      {/* User's interests */}
       <Title colorText="darkGrey" center h2>
         Interests
       </Title>
       <Title colorText="mediumGrey" center h4>
         Lorem ipsum dolor sit amet
       </Title>
-      {/* Music */}
+      {/* Generate interests categories + items */}
       {userInterests.map((item, index) => {
         return (
           <ProfileInterests
@@ -96,12 +86,11 @@ const AccountProfilScreen = () => {
 export default AccountProfilScreen;
 
 // navigationOptions = function to be able to use navigation.getParam()
-AccountProfilScreen.navigationOptions = () => {
+AccountProfilScreen.navigationOptions = ({ navigation }) => {
   const user = {
     name: "Olivier",
     age: 31,
-    photo:
-      "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
+    photo: require("../assets/images/olivier-1.jpg"),
   };
   return {
     title: "Edit your profile",
@@ -115,8 +104,8 @@ AccountProfilScreen.navigationOptions = () => {
     ),
     headerRightContainerStyle: {
       alignItems: "center",
-      paddingRight: paddings.main
-    }
+      paddingRight: paddings.main,
+    },
   };
 };
 
@@ -124,6 +113,8 @@ AccountProfilScreen.navigationOptions = () => {
 const ProfileGallery = styled.FlatList`
   flex-direction: row;
 `;
+
+// OLD Fake Data Structure
 
 // const fakePictures = [
 //   {

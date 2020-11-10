@@ -10,14 +10,15 @@ import { colors, sizes, paddings } from "../styles/theme";
 const { width } = Dimensions.get("window");
 const imageWidth = (width - paddings.main * 4) / 3;
 
-const ProfileGalleryImage = props => {
+const ProfileGalleryImage = (props) => {
   const { url } = props;
 
   const renderImage = () => {
     if (url) {
+      console.log(url);
       return (
         <>
-          <Image source={{ uri: url }} />
+          <Image source={require("../assets/images/olivier-1.jpg")} />
           <DeleteButton>
             <CloseIcon name="close" size={15} color="white" />
           </DeleteButton>

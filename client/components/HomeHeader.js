@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 // Theme
 import { colors, fonts } from "../styles/theme";
 
-const HomeHeader = props => {
+const HomeHeader = (props) => {
   const { navigation, active, currentScrollPosition } = props;
 
   // Check scroll position and scroll direction to hide or show HomeHeader
@@ -16,8 +16,8 @@ const HomeHeader = props => {
 
   useEffect(() => {
     const difference = currentScrollPosition - (offset || 0);
-    // Fix problem of accuracy causing HomeHeader to show-up then immediately hide
-    // if scrollposition is the same number 2 times in a row
+    // Fix problem of accuracy causing HomeHeader to show-up then immediately hide ...
+    // ... if scrollposition is the same number 2 times in a row
     if (Math.abs(difference) < 3) {
       // Do nothing
     } else if (difference < 0) {
@@ -35,14 +35,14 @@ const HomeHeader = props => {
         toValue: -150,
         duration: 300,
         easing: Easing.in(),
-        useNativeDriver: true // avoid laggyness in Android
+        useNativeDriver: true, // avoid laggyness in Android
       }).start();
     } else if (scrollDirection === "up") {
       Animated.timing(headerTranslate, {
         toValue: 0,
         duration: 300,
         easing: Easing.in(),
-        useNativeDriver: true // avoid laggyness in Android
+        useNativeDriver: true, // avoid laggyness in Android
       }).start();
     }
   }, [scrollDirection]);
@@ -133,7 +133,7 @@ const ToggleItem = styled.Text`
   font-size: 15px;
   line-height: 35px;
   color: white;
-  ${props => props.active && `background-color: ${colors.primary}`}
+  ${(props) => props.active && `background-color: ${colors.primary}`}
 `;
 
 const UserSettingsIcon = styled(TouchableOpacity)`

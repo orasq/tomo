@@ -8,7 +8,7 @@ import { VennIcon } from "./Icons";
 // Theme
 import { colors, fonts } from "../styles/theme";
 
-const BigInterestTag = props => {
+const BigInterestTag = (props) => {
   const { number } = props;
 
   return (

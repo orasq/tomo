@@ -14,7 +14,7 @@ const ChatScreen = () => {
   const [keyboardHeight, setKeyboardHeight] = useState(25);
 
   useEffect(() => {
-    const moveUpInput = event => {
+    const moveUpInput = (event) => {
       setKeyboardHeight(event.endCoordinates.height + 55);
       this.scrollView.scrollToEnd({ animated: false });
     };
@@ -50,8 +50,8 @@ const ChatScreen = () => {
         id: "12",
         sender: "Olivier",
         recipient: "John",
-        message: inputMessage
-      }
+        message: inputMessage,
+      },
     ]);
     setInputMessage("");
   };
@@ -59,7 +59,7 @@ const ChatScreen = () => {
   return (
     <ChatScreenContainer style={{ paddingBottom: keyboardHeight }}>
       <ScrollView
-        ref={ref => (this.scrollView = ref)}
+        ref={(ref) => (this.scrollView = ref)}
         onContentSizeChange={(contentWidth, contentHeight) => {
           this.scrollView.scrollToEnd({ animated: false });
         }}
@@ -75,7 +75,7 @@ const ChatScreen = () => {
                   {item.message}
                 </ChatBubble>
               )}
-              keyExtractor={item => item.id}
+              keyExtractor={(item) => item.id}
             />
           ) : (
             <Text>No messages</Text>
@@ -89,14 +89,14 @@ const ChatScreen = () => {
           placeholder="Write message ..."
           value={inputMessage}
           onSubmitEditing={() => handleInput()}
-          onChangeText={text => setInputMessage(text)}
+          onChangeText={(text) => setInputMessage(text)}
         />
         <InputButton>
           <TouchableOpacity
             style={{
               height: 55,
               justifyContent: "center",
-              alignItems: "center"
+              alignItems: "center",
             }}
             onPress={() => handleInput()}
           >
@@ -125,8 +125,8 @@ ChatScreen.navigationOptions = ({ navigation }) => {
     ),
     headerRightContainerStyle: {
       alignItems: "center",
-      paddingRight: paddings.main
-    }
+      paddingRight: paddings.main,
+    },
   };
 };
 
@@ -181,24 +181,24 @@ const fakeChatMessages = [
     id: "1",
     sender: "John",
     recipient: "Olivier",
-    message: "Yoh! What's up dude?"
+    message: "Yoh! What's up dude?",
   },
   {
     id: "2",
     sender: "Olivier",
     recipient: "John",
-    message: "Aight"
+    message: "Aight",
   },
   {
     id: "3",
     sender: "Olivier",
     recipient: "John",
-    message: "U ?"
+    message: "U ?",
   },
   {
     id: "4",
     sender: "John",
     recipient: "Olivier",
-    message: "Aight!"
-  }
+    message: "Aight!",
+  },
 ];

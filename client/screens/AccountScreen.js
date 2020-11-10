@@ -13,7 +13,7 @@ import { Container, Title, Divider, RadioButton, Tag } from "../components";
 const { width } = Dimensions.get("window");
 const cardWidth = (width - paddings.main * 3) / 2;
 
-const AccountScreen = props => {
+const AccountScreen = (props) => {
   const { navigation } = props;
 
   const [checkedRadio, setCheckedRadio] = useState(0);
@@ -21,7 +21,7 @@ const AccountScreen = props => {
   const radioButtonsLabel = [
     { id: 1, label: "I'm living here" },
     { id: 2, label: "I just moved in here" },
-    { id: 3, label: "I'm still ... days in this area" }
+    { id: 3, label: "I'm still ... days in this area" },
   ];
   const renderRadioButtonList = () => {
     return (
@@ -38,7 +38,7 @@ const AccountScreen = props => {
             onPress={() => setCheckedRadio(item.id)}
           />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item) => item.id.toString()}
       />
     );
   };
@@ -57,7 +57,7 @@ const AccountScreen = props => {
           onPress={() => navigation.navigate("AccountProfileScreen")}
           padding="0"
         >
-          <ProfileImage source={require("../assets/images/alice.jpg")}>
+          <ProfileImage source={require("../assets/images/olivier-1.jpg")}>
             <Overlay />
             <FontAwesome name="edit" size={30} color="white" />
             <ButtonText textColor="white">Edit Your Profile</ButtonText>
@@ -84,7 +84,7 @@ const AccountScreen = props => {
 export default AccountScreen;
 
 AccountScreen.navigationOptions = {
-  title: "Your Account"
+  title: "Your Account",
 };
 
 // Styles
@@ -99,7 +99,7 @@ const AccountButton = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   width: ${cardWidth};
-  padding: ${props => props.padding};
+  padding: ${(props) => props.padding};
   border-radius: ${sizes.mainRadius};
   /* background-color: ${colors.whiteGrey}; */
   border: 1px solid ${colors.lightGrey};
@@ -131,7 +131,7 @@ const ButtonText = styled.Text`
   margin-top: 8px;
   font-family: ${fonts.semibold};
   font-size: 14px;
-  color: ${props => props.textColor};
+  color: ${(props) => props.textColor};
 `;
 
 const GeoStatusWrapper = styled.View`

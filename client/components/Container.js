@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 // Theme
 import { paddings } from "../styles/theme";
 
-const Container = props => {
+const Container = (props) => {
   const { children, home, withHeader, login, safeArea, center } = props;
 
   const renderContainer = () => {
@@ -41,7 +41,7 @@ const Container = props => {
               top: 0,
               left: 0,
               width: "100%",
-              height: 40
+              height: 40,
             }}
           />
           <Content {...props}>{children}</Content>
@@ -57,9 +57,9 @@ export default Container;
 
 const Content = styled.View`
   flex: 1;
-  padding: ${props => (props.login ? paddings.login : paddings.main)}px;
-  padding-top: ${props => (props.safeArea ? paddings.safeAreaTop : "0")}px;
-  ${props => props.center && `align-items: center`};
+  padding: ${(props) => (props.login ? paddings.login : paddings.main)}px;
+  padding-top: ${(props) => (props.safeArea ? paddings.safeAreaTop : "0")}px;
+  ${(props) => props.center && `align-items: center`};
 `;
 
 const ContentWithHeader = styled.View`

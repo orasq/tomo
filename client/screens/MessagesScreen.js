@@ -15,13 +15,13 @@ const MessagesScreen = ({ navigation }) => {
 
   useEffect(() => {
     axios
-      .get("https://uinames.com/api/?ext&amount=14")
-      .then(function(response) {
+      .get("https://randomuser.me/api/?results=12")
+      .then((response) => {
         // handle success
-        setFakeUsers(response.data);
+        setFakeUsers(response.data.results);
         setLoading(false);
       })
-      .catch(function(error) {
+      .catch((error) => {
         // handle error
         console.log(error);
       });
@@ -37,13 +37,13 @@ const MessagesScreen = ({ navigation }) => {
           renderItem={({ item }) => (
             <Conversation
               onPress={() => navigation.navigate("ChatScreen", { user: item })}
-              avatar={item.photo}
-              userName={item.name}
+              avatar={item.picture.thumbnail}
+              userName={item.name.first}
               excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit."
               unreadMessages={1}
             />
           )}
-          keyExtractor={item => item.phone}
+          keyExtractor={(item) => item.phone}
         />
       )}
     </Container>
@@ -53,5 +53,5 @@ const MessagesScreen = ({ navigation }) => {
 export default MessagesScreen;
 
 MessagesScreen.navigationOptions = {
-  title: "Messages"
+  title: "Messages",
 };

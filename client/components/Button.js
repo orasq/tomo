@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Theme
 import { fonts, colors } from "../styles/theme";
 
-const Button = props => {
+const Button = (props) => {
   const {
     children,
     bgColor,
@@ -13,7 +13,7 @@ const Button = props => {
     marginVertical,
     ghost,
     onPress,
-    loading
+    loading,
   } = props;
 
   return (
@@ -37,18 +37,18 @@ const Btn = styled.TouchableOpacity`
   align-items: center;
   width: 100%;
   height: 55px;
-  ${props => props.marginVertical && `margin: ${props.marginVertical}px 0`};
+  ${(props) => props.marginVertical && `margin: ${props.marginVertical}px 0`};
   border-radius: 28px;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.bgColor ? props.bgColor : colors.primary};
 
   /* Ghost Button */
-  ${props => props.ghost && `border: 1px ${props.textColor};`}
+  ${(props) => props.ghost && `border: 1px ${props.textColor};`}
 `;
 
 const Text = styled.Text`
   font-family: ${fonts.bold};
   font-size: 14px;
-  color: ${props => (props.textColor ? props.textColor : "white")};
+  color: ${(props) => (props.textColor ? props.textColor : "white")};
   text-transform: uppercase;
 `;

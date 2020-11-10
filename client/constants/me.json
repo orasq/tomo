@@ -1,32 +1,33 @@
 {
   "infos": {
     "name": "Olivier",
-    "age": "1988/08/08",
-    "city": "Brussels, Belgium",
-    "job": "Graphic Designer",
-    "character": "Introvert",
-    "languages": ["French", "Spanish"],
-    "smoke": "never",
-    "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌",
-    "geoStatus": "Leaving in 4 days",
-    "lastGeoPosition": "..."
+    "age": "32",
+    "details": {
+      "geoStatus": "Leaving in 4 days",
+      "city": "Brussels, Belgium",
+      "job": "Graphic Designer",
+      "character": "Introvert",
+      "languages": ["French", "Spanish"],
+      "smoke": "never"
+    },
+    "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
   },
   "pictures": [
     {
       "id": 1,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
+      "url": "../assets/images/olivier-1.jpg"
     },
     {
       "id": 2,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
+      "url": "../assets/images/olivier-2.jpg"
     },
     {
       "id": 3,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2018/10/olivier.jpg"
+      "url": "../assets/images/olivier-3.jpg"
     },
     {
       "id": 4,
-      "url": "https://media.gerbeaud.net/2011/01/olivier.jpg"
+      "url": "../assets/images/olivier-4.jpg"
     }
   ],
   "plans": [
@@ -83,42 +84,4 @@
   ],
   "friends": [],
   "conversations": []
-}
-
-
-{
-  "categories": [
-    { 
-    "id": "0",
-    "category": "concert",
-    "plans": {
-      "id": 123,
-      "plan": "Go to concert"
-      }
-    },
-    { 
-      "id": "0",
-      "category": "concert",
-      "plans": {
-        "id": 123,
-        "plan": "Go to concert"
-      }
-    }
-    { 
-      "id": "0",
-      "category": "concert",
-      "plans": {
-        "id": 123,
-        "plan": "Go to concert"
-      }
-    },
-    { 
-      "id": "0",
-      "category": "concert",
-      "plans": {
-        "id": 123,
-        "plan": "Go to concert"
-      }
-    }
-  ]
 }

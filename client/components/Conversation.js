@@ -5,7 +5,7 @@ import styled from "styled-components";
 // Theme
 import { colors, fonts, sizes } from "../styles/theme";
 
-const Conversation = props => {
+const Conversation = (props) => {
   const { userName, excerpt, avatar, unreadMessages, onPress } = props;
 
   const notificationBubbleRender = () => {

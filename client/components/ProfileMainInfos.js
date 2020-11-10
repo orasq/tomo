@@ -10,7 +10,7 @@ import EditButton from "./EditButton";
 import { colors, fonts } from "../styles/theme";
 import { ScrollView } from "react-native-gesture-handler";
 
-const ProfileMainInfos = props => {
+const ProfileMainInfos = (props) => {
   const { self, data } = props;
 
   return (
@@ -35,33 +35,35 @@ const ProfileMainInfos = props => {
           flexWrap: "wrap",
           alignItems: "flex-start",
           width: "100%",
-          marginBottom: 25
+          marginBottom: 25,
         }}
       >
-        {// convert 'object' to 'array', to be able to use map()
-        Object.entries(data).map(item => {
-          // [0] gives us the 'key' (ex: geoStatus, city, ...)
-          let key = item[0];
-          // [1] gives us the 'value' (ex: leaving in 4 days, Brussels, ...)
-          let value = item[1];
+        {
+          // convert 'object' to 'array', to be able to use map()
+          Object.entries(data.details).map((item) => {
+            // [0] gives us the 'key' (ex: geoStatus, city, ...)
+            let key = item[0];
+            // [1] gives us the 'value' (ex: leaving in 4 days, Brussels, ...)
+            let value = item[1];
 
-          // if 'item' contains an array of values (ex: languages), create a <tag> of each
-          if (Array.isArray(value)) {
-            return value.map(el => {
+            // if 'item' contains an array of values (ex: languages), create a <tag> of each
+            if (Array.isArray(value)) {
+              return value.map((el) => {
+                return (
+                  <Tag key={el} type={key}>
+                    {el}
+                  </Tag>
+                );
+              });
+            } else {
               return (
-                <Tag key={el} type={key}>
-                  {el}
+                <Tag key={item} type={key}>
+                  {value}
                 </Tag>
               );
-            });
-          } else {
-            return (
-              <Tag key={item} type={key}>
-                {value}
-              </Tag>
-            );
-          }
-        })}
+            }
+          })
+        }
       </ScrollView>
       <Description>{data.description}</Description>
     </Wrapper>

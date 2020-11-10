@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 // Theme
 import { colors, fonts } from "../styles/theme";
 
-const EditButton = props => {
+const EditButton = (props) => {
   const { positionTop } = props;
 
   return (
@@ -26,7 +26,7 @@ const Wrapper = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   position: absolute;
-  ${props => props.positionTop && `top: ${props.positionTop}px;`};
+  ${(props) => props.positionTop && `top: ${props.positionTop}px;`};
   right: 0;
   padding: 2px 10px;
   background-color: ${colors.primary};

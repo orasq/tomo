@@ -28,10 +28,13 @@ const AccountProfilScreen = () => {
 
   const processedPictures = () => {
     const newArray = userPictures;
+    // Check how many blank images to add
     const numberOfImagesToAdd = 6 - userPictures.length;
 
-    for (var i = 0; i < numberOfImagesToAdd; i++) {
-      newArray.push({ id: newArray.length + 1 });
+    if (numberOfImagesToAdd != 0) {
+      for (var i = 0; i < numberOfImagesToAdd; i++) {
+        newArray.push({ id: newArray.length + 1 });
+      }
     }
     return newArray;
   };
@@ -55,7 +58,7 @@ const AccountProfilScreen = () => {
       <Divider />
       <ProfilePlans
         self
-        image={userPictures[0].url}
+        image={null}
         name={userInfo.name}
         data={userPlans}
       />

@@ -16,7 +16,7 @@ const cardWidth = (width - paddings.main * 3) / 2;
 const cardHeight = cardWidth * 1.5;
 
 const UserCard = props => {
-  const { first, order, name, interests, profileImage, onPress } = props;
+  const { first, order, name, interests, profileImage, geoStatus, onPress } = props;
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -37,9 +37,9 @@ const UserCard = props => {
           <UserCardInterestTag number={interests} />
           <UserInfo>
             <Name>{name}</Name>
-            <Tags>
-              <UserCardStatusTag text="Leaving in 4 days" />
-            </Tags>
+            {geoStatus ? <Tags>
+              <UserCardStatusTag text={geoStatus} />
+            </Tags> : null}
           </UserInfo>
         </Image>
       </Container>

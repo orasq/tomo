@@ -15,19 +15,19 @@
   "pictures": [
     {
       "id": 1,
-      "url": "../assets/images/olivier-1.jpg"
+      "url": "https://media.gerbeaud.net/2011/01/olivier.jpg"
     },
     {
       "id": 2,
-      "url": "../assets/images/olivier-2.jpg"
+      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2018/10/olivier.jpg"
     },
     {
       "id": 3,
-      "url": "../assets/images/olivier-3.jpg"
+      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
     },
     {
       "id": 4,
-      "url": "../assets/images/olivier-4.jpg"
+      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
     }
   ],
   "plans": [

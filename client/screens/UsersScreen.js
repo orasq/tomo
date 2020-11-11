@@ -10,22 +10,17 @@ import { colors, paddings } from "../styles/theme";
 // Components import
 import { Container, UserCard, HomeHeader } from "../components";
 
+// Constants
+var usersJSON = require("../constants/user.json");
+
 const UsersScreen = ({ navigation }) => {
-  const [fakeUsers, setFakeUsers] = useState([]);
+  const [usersList, setUsersList] = useState(usersJSON);
   const [loading, setLoading] = useState(true);
 
+
+  // Fake loading time
   useEffect(() => {
-    axios
-      .get("https://randomuser.me/api/?results=200")
-      .then((response) => {
-        // handle success
-        setFakeUsers(response.data.results);
-        setLoading(false);
-      })
-      .catch((error) => {
-        // handle error
-        console.log(error);
-      });
+    setTimeout(() => { setLoading(false); }, 1000);
   }, []);
 
   // Check scroll position and pass it to HomeHeader for hiding purposes
@@ -55,18 +50,19 @@ const UsersScreen = ({ navigation }) => {
             paddingTop: 70 /* = HomeHeader component height */,
           }}
           columnWrapperStyle={{ justifyContent: "space-between" }}
-          data={fakeUsers}
+          data={usersList}
           renderItem={({ item }) => (
             <UserCard
               onPress={() =>
                 navigation.navigate("UsersProfileScreen", { userInfo: item })
               }
-              name={item.name.first}
-              interests={item.dob.age}
-              profileImage={item.picture.large}
+              name={item.infos.name}
+              interests={item.commonInterests}
+              profileImage={item.pictures[0].url}
+              geoStatus={item.infos.details.geoStatus}
             />
           )}
-          keyExtractor={(item) => item.phone}
+          keyExtractor={(item) => item.id}
         />
       )}
     </Container>

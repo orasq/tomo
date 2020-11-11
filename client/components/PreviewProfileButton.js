@@ -11,16 +11,12 @@ const PreviewProfileButton = (props) => {
   return (
     <Wrapper onPress={onPress}>
       <HeaderLinkIcon name="eye" size={14} color="white" />
-      {/* <HeaderLinkAvatar source={{ uri: user.photo }} /> */}
-      {console.log(user.photo)}
       <HeaderLinkAvatar source={user.photo} />
     </Wrapper>
   );
 };
 
 export default PreviewProfileButton;
-
-// Styles
 
 // Styles
 
@@ -34,7 +30,7 @@ const Wrapper = styled.TouchableOpacity`
   overflow: hidden;
 `;
 
-const HeaderLinkAvatar = styled.Image`
+const HeaderLinkAvatar = styled.ImageBackground`
   position: absolute;
   top: 0;
   bottom: 0;

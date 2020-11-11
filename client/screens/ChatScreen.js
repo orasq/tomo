@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 // Theme
-import { colors, sizes, paddings } from "../styles/theme";
+import { colors, paddings } from "../styles/theme";
 
 // Components import
 import { ChatBubble, PreviewProfileButton } from "../components";

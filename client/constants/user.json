@@ -1,84 +1,135 @@
-{
-  "name": "Jean Jean",
-  "age": "1992/07/12",
-  "city": "Mourboing-Les-Bains, France",
-  "job": "Manager",
-  "character": "Introvert",
-  "languages": ["French", "English", "Spanish"],
-  "smoke": "never",
-  "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌",
-  "pictures": [
-    {
-      "id": 1,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
+[
+  {
+    "infos": {
+      "name": "Jean Jean",
+      "age": "32",
+      "details": {
+        "city": "Paris, France",
+        "job": "Comedian",
+        "character": "Extrovert",
+        "languages": ["French", "English", "Italian"],
+        "smoke": "socially"
+      },
+      "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
-    {
-      "id": 2,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
+    "pictures": [
+      {
+        "id": 1,
+        "url": "https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_10_juillet_2017.2Fcoupedecheveux.2F4118549-1-fre-FR.2Fcoupedecheveux.2Ejpg/480x480/quality/80/coiffures-homme-les-coupes-de-cheveux-tendances-de-l-ete-2017.jpg"
+      }
+    ],
+    "plans": [
+      { "id": "1", "plan": "Meet new people", "image": "user.photo" },
+      { "id": "2", "plan": "Discover the city", "image": "user.photo" },
+    ],
+    "interests": [
+      {
+        "category": "music",
+        "order": 1,
+        "elements": [
+          "David Guetta",
+          "Black Eyed Peas",
+          "Skrillex",
+          "Celine Dion",
+          "Georges Brassens",
+          "Lady Gaga",
+          "Sam Smith"
+        ]
+      },
+      {
+        "category": "sport",
+        "order": 2,
+        "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
+      },
+      {
+        "category": "books",
+        "order": 3,
+        "elements": [
+          "Le moniteur automobile",
+          "L'étranger",
+          "Harry Potter et la Croupe de Feu",
+          "Allez les Bleus !"
+        ]
+      }
+    ],
+    "friends": [],
+    "conversations": [],
+    "commonInterests" : "12"
+  },
+  {
+    "infos": {
+      "name": "Jeannice",
+      "age": "23",
+      "details": {
+        "geoStatus": "Leaving in 14 days",
+        "city": "Tijuana, Mexico",
+        "job": "Singer",
+        "character": "Extrovert",
+        "languages": ["Spanish"],
+        "smoke": "never"
+      },
+      "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
-    {
-      "id": 3,
-      "url": "https://www.jardiner-malin.fr/wp-content/uploads/2018/10/olivier.jpg"
-    },
-    {
-      "id": 4,
-      "url": "https://media.gerbeaud.net/2011/01/olivier.jpg"
-    }
-  ],
-  "geoStatus": "Leaving in 4 days",
-  "lastGeoPosition": "...",
-  "plans": [
-    { "id": "1", "plan": "Have a drink", "image": "user.photo" },
-    { "id": "2", "plan": "Discover the city", "image": "user.photo" },
-    {
-      "id": "3",
-      "plan": "Go to a concert: Denzel Curry (20/12/2019)",
-      "image": "user.photo"
-    },
-    { "id": "4", "plan": "Learn Spanish", "image": "user.photo" }
-  ],
-  "interests": [
-    {
-      "category": "music",
-      "order": 1,
-      "elements": [
-        "Arctic Monkeys",
-        "Eminem",
-        "DJ Furax",
-        "Four Tet",
-        "Kojak Klack",
-        "System of a Down",
-        "Sam Smith",
-        "King Gizzard and the Lizard Wizard",
-        "MF DOOM",
-        "Camille Poteau",
-        "Jeanne Dark",
-        "Petrocious",
-        "Koba Lad",
-        "Union",
-        "Muse",
-        "Celophane",
-        "Ptit Biscuit",
-        "Clark",
-        "Aphex Twin"
-      ]
-    },
-    {
-      "category": "sport",
-      "order": 2,
-      "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
-    },
-    {
-      "category": "books",
-      "order": 3,
-      "elements": [
-        "Le moniteur automobile",
-        "L'étranger",
-        "Harry Potter et la Croupe de Feu",
-        "Allez les Bleus !"
-      ]
-    }
-  ],
-  "friends": [],
-  "conversations": []
-}
+    "pictures": [
+      {
+        "id": 1,
+        "url": "https://pbs.twimg.com/profile_images/899249481568223232/hwSNM_4e_400x400.jpg"
+      }
+    ],
+    "plans": [
+      { "id": "1", "plan": "Have a drink", "image": "user.photo" },
+      { "id": "2", "plan": "Discover the city", "image": "user.photo" },
+      {
+        "id": "3",
+        "plan": "Go to a concert: Denzel Curry (20/12/2019)",
+        "image": "user.photo"
+      },
+      { "id": "4", "plan": "Learn English", "image": "user.photo" }
+    ],
+    "interests": [
+      {
+        "category": "music",
+        "order": 1,
+        "elements": [
+          "Arctic Monkeys",
+          "Griselda",
+          "DJ Furax",
+          "Four Tet",
+          "Kojak Klack",
+          "System of a Down",
+          "Sam Smith",
+          "King Gizzard and the Lizard Wizard",
+          "MF DOOM",
+          "Camille Poteau",
+          "Jeanne Dark",
+          "Petrocious",
+          "Koba Lad",
+          "Union",
+          "Muse",
+          "Celophane",
+          "Ptit Biscuit",
+          "Clark",
+          "Aphex Twin"
+        ]
+      },
+      {
+        "category": "sport",
+        "order": 2,
+        "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
+      },
+      {
+        "category": "books",
+        "order": 3,
+        "elements": [
+          "Le moniteur automobile",
+          "L'étranger",
+          "Harry Potter et la Croupe de Feu",
+          "Allez les Bleus !"
+        ]
+      }
+    ],
+    "friends": [],
+    "conversations": [],
+    "commonInterests" : "3"
+  }
+]

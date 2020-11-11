@@ -15,10 +15,9 @@ const ProfileGalleryImage = (props) => {
 
   const renderImage = () => {
     if (url) {
-      console.log(url);
       return (
         <>
-          <Image source={require("../assets/images/olivier-1.jpg")} />
+          <Image source={{uri:url}} />
           <DeleteButton>
             <CloseIcon name="close" size={15} color="white" />
           </DeleteButton>
@@ -50,7 +49,7 @@ const Wrapper = styled.View`
   overflow: hidden;
 `;
 
-const Image = styled.Image`
+const Image = styled.ImageBackground`
   position: absolute;
   top: 0;
   bottom: 0;

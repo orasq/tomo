@@ -27,6 +27,10 @@ const MessagesScreen = ({ navigation }) => {
       });
   }, []);
 
+  const randomUnreadMessageNumber= (max) => {
+    return Math.floor(Math.random() * Math.floor(max))
+  }
+
   return (
     <Container withHeader>
       {loading ? (
@@ -37,10 +41,10 @@ const MessagesScreen = ({ navigation }) => {
           renderItem={({ item }) => (
             <Conversation
               onPress={() => navigation.navigate("ChatScreen", { user: item })}
-              avatar={item.picture.thumbnail}
+              avatar={item.picture.medium}
               userName={item.name.first}
               excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-              unreadMessages={1}
+              unreadMessages={randomUnreadMessageNumber(4)}
             />
           )}
           keyExtractor={(item) => item.phone}

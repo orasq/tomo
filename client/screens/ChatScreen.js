@@ -9,7 +9,11 @@ import { colors, paddings } from "../styles/theme";
 // Components import
 import { ChatBubble, PreviewProfileButton } from "../components";
 
-const ChatScreen = () => {
+const ChatScreen = ({navigation}) => {
+
+  // getting data from nav
+  const conversation = navigation.getParam("conversation");
+
   // Keyboard handling
   const [keyboardHeight, setKeyboardHeight] = useState(25);
 
@@ -32,7 +36,7 @@ const ChatScreen = () => {
       "keyboardDidHide",
       moveDownInput
     );
-
+    // Clean-up function
     return function cleanup() {
       setKeyboardWillShowSub.remove();
       setKeyboardWillHideSub.remove();
@@ -41,15 +45,15 @@ const ChatScreen = () => {
 
   // Input handling
   const [inputMessage, setInputMessage] = useState("");
-  const [fakeData, setFakeData] = useState(fakeChatMessages);
+  const [messages, setMessages] = useState(conversation.messages);
 
   const handleInput = () => {
-    setFakeData([
-      ...fakeData,
+    setMessages([
+      ...messages,
       {
-        id: "12",
+        id: Math.floor(Math.random() * Math.floor(1000)),
         sender: "Olivier",
-        recipient: "John",
+        recipient: conversation.contact.name,
         message: inputMessage,
       },
     ]);
@@ -67,9 +71,9 @@ const ChatScreen = () => {
         contentContainerStyle={{ flexGrow: 1 }}
       >
         <ChatLog>
-          {fakeData.length > 0 ? (
+          {messages.length > 0 ? (
             <FlatList
-              data={fakeData}
+              data={messages}
               renderItem={({ item }) => (
                 <ChatBubble sender={item.sender} recipient={item.recipient}>
                   {item.message}
@@ -112,14 +116,22 @@ export default ChatScreen;
 
 // navigationOptions = function to be able to use navigation.getParam()
 ChatScreen.navigationOptions = ({ navigation }) => {
-  const user = navigation.getParam("user");
+  const conversation = navigation.getParam("conversation");
+  // user infos for top-right profile page link
+  const user = {
+    name: conversation.contact.name,
+    // random age for test purpose
+    age: (Math.floor(Math.random() * Math.floor(10))) + 20,
+    picture: conversation.contact.picture
+  };
+
   return {
     title: user.name,
     headerRight: (
       <PreviewProfileButton
         user={user}
         onPress={() =>
-          navigation.navigate("UsersProfileScreen", { userInfo: user })
+          navigation.navigate("UsersProfileScreen", { user })
         }
       />
     ),
@@ -173,32 +185,3 @@ const InputButton = styled.View`
 `;
 
 const Text = styled.Text``;
-
-// Fake Data
-
-const fakeChatMessages = [
-  {
-    id: "1",
-    sender: "John",
-    recipient: "Olivier",
-    message: "Yoh! What's up dude?",
-  },
-  {
-    id: "2",
-    sender: "Olivier",
-    recipient: "John",
-    message: "Aight",
-  },
-  {
-    id: "3",
-    sender: "Olivier",
-    recipient: "John",
-    message: "U ?",
-  },
-  {
-    id: "4",
-    sender: "John",
-    recipient: "Olivier",
-    message: "Aight!",
-  },
-];

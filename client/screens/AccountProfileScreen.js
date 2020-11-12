@@ -90,10 +90,11 @@ export default AccountProfilScreen;
 
 // navigationOptions = function to be able to use navigation.getParam()
 AccountProfilScreen.navigationOptions = ({ navigation }) => {
+  // user infos for top-right profile page link
   const user = {
     name: "Olivier",
     age: 31,
-    photo: require("../assets/images/olivier-1.jpg"),
+    picture: "https://media.gerbeaud.net/2011/01/olivier.jpg",
   };
   return {
     title: "Edit your profile",
@@ -101,7 +102,7 @@ AccountProfilScreen.navigationOptions = ({ navigation }) => {
       <PreviewProfileButton
         user={user}
         onPress={() =>
-          navigation.navigate("UsersProfileScreen", { userInfo: user })
+          navigation.navigate("UsersProfileScreen", { user })
         }
       />
     ),
@@ -116,95 +117,3 @@ AccountProfilScreen.navigationOptions = ({ navigation }) => {
 const ProfileGallery = styled.FlatList`
   flex-direction: row;
 `;
-
-// OLD Fake Data Structure
-
-// const fakePictures = [
-//   {
-//     id: 1,
-//     url:
-//       "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier.jpg"
-//   },
-//   {
-//     id: 2,
-//     url:
-//       "https://www.jardiner-malin.fr/wp-content/uploads/2015/11/olivier1.jpg"
-//   },
-//   {
-//     id: 3,
-//     url:
-//       "https://www.jardiner-malin.fr/wp-content/uploads/2018/10/olivier.jpg"
-//   },
-//   {
-//     id: 4,
-//     url: "https://media.gerbeaud.net/2011/01/olivier.jpg"
-//   }
-// ];
-
-// const fakeInfosTags = {
-//   geoStatus: "Leaving in 4 days",
-//   city: "Brussels, Belgium",
-//   job: "Graphic Designer",
-//   character: "Introvert",
-//   languages: ["French", "Spanish"],
-//   smoke: ";)"
-// };
-
-// const fakeDescription = {
-//   description:
-//     "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
-// };
-
-// const fakePlans = [
-//   { id: "1", plan: "Have a drink", image: user.photo },
-//   { id: "2", plan: "Discover the city", image: user.photo },
-//   {
-//     id: "3",
-//     plan: "Go to a concert: Denzel Curry (20/12/2019)",
-//     image: user.photo
-//   },
-//   { id: "4", plan: "Learn Spanish", image: user.photo }
-// ];
-
-// const fakeInterests = [
-//   {
-//     category: "music",
-//     order: 1,
-//     elements: [
-//       "Arctic Monkeys",
-//       "Eminem",
-//       "DJ Furax",
-//       "Four Tet",
-//       "Kojak Klack",
-//       "System of a Down",
-//       "Sam Smith",
-//       "King Gizzard and the Lizard Wizard",
-//       "MF DOOM",
-//       "Camille Poteau",
-//       "Jeanne Dark",
-//       "Petrocious",
-//       "Koba Lad",
-//       "Union",
-//       "Muse",
-//       "Celophane",
-//       "Ptit Biscuit",
-//       "Clark",
-//       "Aphex Twin"
-//     ]
-//   },
-//   {
-//     category: "sport",
-//     order: 2,
-//     elements: ["Football", "Running", "Fitness", "Fc Barcelona"]
-//   },
-//   {
-//     category: "books",
-//     order: 3,
-//     elements: [
-//       "Le moniteur automobile",
-//       "L'étranger",
-//       "Harry Potter et la Croupe de Feu",
-//       "Allez les Bleus !"
-//     ]
-//   }
-// ];

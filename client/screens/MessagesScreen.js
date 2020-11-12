@@ -9,27 +9,17 @@ import { colors, fonts } from "../styles/theme";
 // Components import
 import { Container, Conversation } from "../components";
 
+// Constants
+var messagesJSON = require("../constants/messages.json");
+
 const MessagesScreen = ({ navigation }) => {
-  const [fakeUsers, setFakeUsers] = useState([]);
+  const [conversation, setConversation] = useState(messagesJSON);
   const [loading, setLoading] = useState(true);
-
+  
+  // Fake loading time
   useEffect(() => {
-    axios
-      .get("https://randomuser.me/api/?results=12")
-      .then((response) => {
-        // handle success
-        setFakeUsers(response.data.results);
-        setLoading(false);
-      })
-      .catch((error) => {
-        // handle error
-        console.log(error);
-      });
+    setTimeout(() => { setLoading(false); }, 1000);
   }, []);
-
-  const randomUnreadMessageNumber= (max) => {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
 
   return (
     <Container withHeader>
@@ -37,17 +27,17 @@ const MessagesScreen = ({ navigation }) => {
         <ActivityIndicator size="large" color={colors.mediumGrey} />
       ) : (
         <FlatList
-          data={fakeUsers}
+          data={conversation}
           renderItem={({ item }) => (
             <Conversation
-              onPress={() => navigation.navigate("ChatScreen", { user: item })}
-              avatar={item.picture.medium}
-              userName={item.name.first}
-              excerpt="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-              unreadMessages={randomUnreadMessageNumber(4)}
+              onPress={() => navigation.navigate("ChatScreen", { conversation: item })}
+              avatar={item.contact.picture}
+              userName={item.contact.name}
+              excerpt={item.messages[item.messages.length - 1].message}
+              unreadMessages={item.unreadMessages}
             />
           )}
-          keyExtractor={(item) => item.phone}
+          keyExtractor={(item) => item.id}
         />
       )}
     </Container>

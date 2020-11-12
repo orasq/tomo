@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { paddings } from "../styles/theme";
 
 // Components import
-import { HomeHeader, Container } from "../components";
+import { HomeHeader, Container, Wip } from "../components";
 
 const PlansScreen = props => {
   const { navigation } = props;
@@ -13,7 +13,7 @@ const PlansScreen = props => {
   return (
     <Container home>
       <HomeHeader active="plans" navigation={navigation} />
-      <Text>Plans screen</Text>
+      <Wip />
     </Container>
   );
 };
@@ -23,9 +23,3 @@ export default PlansScreen;
 PlansScreen.navigationOptions = {
   header: null
 };
-
-// Styles
-
-const Text = styled.Text`
-  background-color: yellow;
-`;

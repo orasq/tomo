@@ -20,7 +20,7 @@
     ],
     "plans": [
       { "id": "1", "plan": "Meet new people", "image": "user.photo" },
-      { "id": "2", "plan": "Discover the city", "image": "user.photo" },
+      { "id": "2", "plan": "Discover the city", "image": "user.photo" }
     ],
     "interests": [
       {

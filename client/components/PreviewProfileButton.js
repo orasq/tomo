@@ -7,11 +7,10 @@ import { colors, sizes, paddings } from "../styles/theme";
 
 const PreviewProfileButton = (props) => {
   const { user, onPress } = props;
-
   return (
     <Wrapper onPress={onPress}>
       <HeaderLinkIcon name="eye" size={14} color="white" />
-      <HeaderLinkAvatar source={user.photo} />
+      <HeaderLinkAvatar source={{uri: user.picture}} />
     </Wrapper>
   );
 };

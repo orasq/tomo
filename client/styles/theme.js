@@ -6,7 +6,8 @@ const colors = {
   whiteGrey: "#F7F7F7",
   lightGrey: "#E3E3E3",
   mediumGrey: "#C7C7C7",
-  darkGrey: "#525252"
+  darkGrey: "#525252",
+  wipGrey: "#929292"
 };
 
 const paddings = {

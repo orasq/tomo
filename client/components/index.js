@@ -22,6 +22,7 @@ import ProfileMainInfos from "./ProfileMainInfos";
 import ProfilePlans from "./ProfilePlans";
 import ProfileInterests from "./ProfileInterests";
 import ProfileGalleryImage from "./ProfileGalleryImage";
+import Wip from "./Wip";
 
 export {
   Container,
@@ -47,5 +48,6 @@ export {
   ProfileMainInfos,
   ProfilePlans,
   ProfileInterests,
-  ProfileGalleryImage
+  ProfileGalleryImage,
+  Wip
 };

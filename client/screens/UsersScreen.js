@@ -11,7 +11,7 @@ import { colors, paddings } from "../styles/theme";
 import { Container, UserCard, HomeHeader } from "../components";
 
 // Constants
-var usersJSON = require("../constants/user.json");
+var usersJSON = require("../constants/users.json");
 
 const UsersScreen = ({ navigation }) => {
   const [usersList, setUsersList] = useState(usersJSON);

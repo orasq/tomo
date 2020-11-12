@@ -41,7 +41,8 @@ const Title = props => {
     marginBottom,
     colorText
   } = props;
-
+  
+  // Using spread operator to pass all props do component
   return <Text {...props}>{children}</Text>;
 };
 

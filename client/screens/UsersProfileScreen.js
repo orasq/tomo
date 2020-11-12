@@ -18,7 +18,7 @@ import {
 const UsersProfileScreen = props => {
   const { navigation } = props;
 
-  // fakeData from randomuser.me api
+  // getting data from nav
   const user = navigation.getParam("userInfo");
 
    // States

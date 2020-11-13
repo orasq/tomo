@@ -8,15 +8,19 @@ import { colors } from "../styles/theme";
 // Composants import
 import { VennIcon } from "./Icons";
 
-const UserCardInterestTag = props => {
+const UserCardInterestTag = (props) => {
   const { number } = props;
 
-  return (
-    <Wrapper>
-      <VennIcon size="30" />
-      <Text>{number}</Text>
-    </Wrapper>
-  );
+  if (number != "0") {
+    return (
+      <Wrapper>
+        <VennIcon size="30" />
+        <Text>{number}</Text>
+      </Wrapper>
+    );
+  } else {
+    return <EmptyTag />;
+  }
 };
 
 export default UserCardInterestTag;
@@ -41,4 +45,9 @@ const Text = styled.Text`
   font-family: "nunito-bold";
   font-size: 14px;
   color: white;
+`;
+
+const EmptyTag = styled.View`
+  height: 25px;
+  width: 10px;
 `;

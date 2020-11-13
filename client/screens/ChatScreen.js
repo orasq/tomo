@@ -9,39 +9,40 @@ import { colors, paddings } from "../styles/theme";
 // Components import
 import { ChatBubble, PreviewProfileButton } from "../components";
 
-const ChatScreen = ({navigation}) => {
-
+const ChatScreen = ({ navigation }) => {
   // getting data from nav
   const conversation = navigation.getParam("conversation");
 
   // Keyboard handling
   const [keyboardHeight, setKeyboardHeight] = useState(25);
 
-  useEffect(() => {
-    const moveUpInput = (event) => {
-      setKeyboardHeight(event.endCoordinates.height + 55);
-      this.scrollView.scrollToEnd({ animated: false });
-    };
+  // Old keyboard behavior fix. To keep ??
 
-    let moveDownInput = () => {
-      setKeyboardHeight(25);
-    };
+  // useEffect(() => {
+  //   const moveUpInput = (event) => {
+  //     // setKeyboardHeight(event.endCoordinates.height + 55);
+  //     // this.scrollView.scrollToEnd({ animated: false });
+  //   };
 
-    let setKeyboardWillShowSub = Keyboard.addListener(
-      "keyboardDidShow",
-      moveUpInput
-    );
+  //   let moveDownInput = () => {
+  //     setKeyboardHeight(25);
+  //   };
 
-    let setKeyboardWillHideSub = Keyboard.addListener(
-      "keyboardDidHide",
-      moveDownInput
-    );
-    // Clean-up function
-    return function cleanup() {
-      setKeyboardWillShowSub.remove();
-      setKeyboardWillHideSub.remove();
-    };
-  }, []);
+  //   let setKeyboardWillShowSub = Keyboard.addListener(
+  //     "keyboardDidShow",
+  //     moveUpInput
+  //   );
+
+  //   let setKeyboardWillHideSub = Keyboard.addListener(
+  //     "keyboardDidHide",
+  //     moveDownInput
+  //   );
+  //   // Clean-up function
+  //   return function cleanup() {
+  //     setKeyboardWillShowSub.remove();
+  //     setKeyboardWillHideSub.remove();
+  //   };
+  // }, []);
 
   // Input handling
   const [inputMessage, setInputMessage] = useState("");
@@ -51,7 +52,7 @@ const ChatScreen = ({navigation}) => {
     setMessages([
       ...messages,
       {
-        id: Math.floor(Math.random() * Math.floor(1000)),
+        id: Math.floor(Math.random() * Math.floor(1000)).toString(),
         sender: "Olivier",
         recipient: conversation.contact.name,
         message: inputMessage,
@@ -121,8 +122,8 @@ ChatScreen.navigationOptions = ({ navigation }) => {
   const user = {
     name: conversation.contact.name,
     // random age for test purpose
-    age: (Math.floor(Math.random() * Math.floor(10))) + 20,
-    picture: conversation.contact.picture
+    age: Math.floor(Math.random() * Math.floor(10)) + 20,
+    picture: conversation.contact.picture,
   };
 
   return {
@@ -130,9 +131,7 @@ ChatScreen.navigationOptions = ({ navigation }) => {
     headerRight: (
       <PreviewProfileButton
         user={user}
-        onPress={() =>
-          navigation.navigate("UsersProfileScreen", { user })
-        }
+        onPress={() => navigation.navigate("UsersProfileScreen", { user })}
       />
     ),
     headerRightContainerStyle: {

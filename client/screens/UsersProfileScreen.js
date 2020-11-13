@@ -9,32 +9,30 @@ import {
   Title,
   ProfileMainInfos,
   ProfilePlans,
-  ProfileInterests
+  ProfileInterests,
 } from "../components";
 
 // Constants
 // var userJSON = require("../constants/user.json");
 
-const UsersProfileScreen = props => {
+const UsersProfileScreen = (props) => {
   const { navigation } = props;
 
   // getting data from nav
   const user = navigation.getParam("userInfo");
 
-   // States
-   const [userInfos, setUserInfos] = useState(user.infos);
-   const [userPictures, setUserPictures] = useState(user.pictures);
-   const [userPlans, setUserPlans] = useState(user.plans);
-   const [userInterests, setUserInterests] = useState(user.interests);
-   const [commonInterests, setCommonInterests] = useState(user.commonInterests);
+  // States
+  const [userInfos, setUserInfos] = useState(user.infos);
+  const [userPictures, setUserPictures] = useState(user.pictures);
+  const [userPlans, setUserPlans] = useState(user.plans);
+  const [userInterests, setUserInterests] = useState(user.interests);
+  const [commonInterests, setCommonInterests] = useState(user.commonInterests);
 
   return (
-    <Container safeArea> 
-       <ProfileImage images={userPictures[0].url} navigation={navigation} />
+    <Container safeArea>
+      <ProfileImage images={userPictures[0].url} navigation={navigation} />
       <BigInterestTag number={commonInterests} />
-      <ProfileMainInfos
-        data={userInfos}
-      />
+      <ProfileMainInfos data={userInfos} />
       <Divider />
       <ProfilePlans name={userInfos.name} data={userPlans} />
       <Divider />
@@ -44,7 +42,7 @@ const UsersProfileScreen = props => {
       </Title>
       <Title colorText="mediumGrey" center h4>
         Lorem ipsum dolor sit amet
-      </Title> 
+      </Title>
       {/* Music */}
       {userInterests.map((item, index) => {
         return (
@@ -64,5 +62,5 @@ const UsersProfileScreen = props => {
 export default UsersProfileScreen;
 
 UsersProfileScreen.navigationOptions = {
-  header: null
+  header: null,
 };

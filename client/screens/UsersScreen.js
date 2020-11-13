@@ -17,10 +17,11 @@ const UsersScreen = ({ navigation }) => {
   const [usersList, setUsersList] = useState(usersJSON);
   const [loading, setLoading] = useState(true);
 
-
   // Fake loading time
   useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   // Check scroll position and pass it to HomeHeader for hiding purposes
@@ -62,7 +63,7 @@ const UsersScreen = ({ navigation }) => {
               geoStatus={item.infos.details.geoStatus}
             />
           )}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item._id}
         />
       )}
     </Container>

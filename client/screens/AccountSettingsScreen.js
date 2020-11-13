@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+// Components import
+import { Container, Wip } from "../components";
+
 const AccountSettingsScreen = () => {
-  return <Text>Settings</Text>;
+  return (
+    <Container home>
+      <Wip />
+    </Container>
+  );
 };
 
 export default AccountSettingsScreen;
-
-const Text = styled.Text`
-  color: red;
-`;

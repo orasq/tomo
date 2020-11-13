@@ -10,8 +10,26 @@ import EditButton from "./EditButton";
 import { colors, fonts } from "../styles/theme";
 import { ScrollView } from "react-native-gesture-handler";
 
+// Constants
+const meJSON = require("../constants/me.json");
+
+// Gather app user's personnal plans to compare with user profile currently displayed
+const myDetails = Object.values(meJSON.infos.details);
+const myLanguages = meJSON.infos.details.languages;
+// Combine two arrays: infos and languages to be able to easily check commonalites ...
+// ... a bit messy. To improve.
+const myInfos = myDetails.concat(myLanguages);
+
 const ProfileMainInfos = (props) => {
   const { self, data } = props;
+
+  // Check if current info is in common with app user's ones
+  const commonCheck = (item) => {
+    // Don't run if on personnal profile page
+    if (!self) {
+      return myInfos.includes(item);
+    }
+  };
 
   return (
     <Wrapper>
@@ -50,14 +68,14 @@ const ProfileMainInfos = (props) => {
             if (Array.isArray(value)) {
               return value.map((el) => {
                 return (
-                  <Tag key={el} type={key}>
+                  <Tag common={commonCheck(el)} key={el} type={key}>
                     {el}
                   </Tag>
                 );
               });
             } else {
               return (
-                <Tag key={item} type={key}>
+                <Tag common={commonCheck(value)} key={item} type={key}>
                   {value}
                 </Tag>
               );

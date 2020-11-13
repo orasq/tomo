@@ -13,7 +13,7 @@ import {
 } from "../components";
 
 // Constants
-// var userJSON = require("../constants/user.json");
+// const meJSON = require("../constants/me.json");
 
 const UsersProfileScreen = (props) => {
   const { navigation } = props;

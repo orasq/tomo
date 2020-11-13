@@ -9,8 +9,24 @@ import Title from "./Title";
 import Divider from "./Divider";
 import EditButton from "./EditButton";
 
-const ProfileInterests = props => {
+// Constants
+const meJSON = require("../constants/me.json");
+
+// Gather app user's personnal plans to compare with user profile currently displayed
+const myInterests = Object.values(meJSON.interests);
+// Dirty ... for tests purposes. Get every elements of different arrays and 'flat' them to a new array
+const dirtyFlatInterestsList = myInterests.map((el) => el.elements).flat();
+
+const ProfileInterests = (props) => {
   const { category, elements, last, self } = props;
+
+  // Check if current info is in common with app user's ones
+  const commonCheck = (item) => {
+    // Don't run if on personnal profile page
+    if (!self) {
+      return dirtyFlatInterestsList.includes(item);
+    }
+  };
 
   const renderEditButton = () => {
     if (self) {
@@ -60,11 +76,15 @@ const ProfileInterests = props => {
           flexWrap: "wrap",
           justifyContent: "center",
           width: "100%",
-          marginBottom: 10
+          marginBottom: 10,
         }}
       >
-        {elements.map(item => {
-          return <Tag key={item}>{item}</Tag>;
+        {elements.map((item) => {
+          return (
+            <Tag common={commonCheck(item)} key={item}>
+              {item}
+            </Tag>
+          );
         })}
       </ScrollView>
       {renderDivider()}

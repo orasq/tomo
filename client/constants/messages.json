@@ -5,7 +5,7 @@
       "name": "Perceval",
       "picture": "https://i.pinimg.com/originals/92/96/fe/9296fe17d842595a2a91f1f042b132b7.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Perceval",
@@ -25,7 +25,7 @@
         "message": "C'est pas faux ..."
       }
     ],
-    "unreadMessages" : 1
+    "unreadMessages": 1
   },
   {
     "id": "5",
@@ -33,7 +33,7 @@
       "name": "Takeshi",
       "picture": "https://c-sf.smule.com/rs-z-sf-1/account/picture/cf/ae/c32548ce-c39c-4ee6-83f6-a60a293ee7b7.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Takeshi",
@@ -53,7 +53,7 @@
         "message": "権力より愛だね"
       }
     ],
-    "unreadMessages" : 0
+    "unreadMessages": 0
   },
   {
     "id": "3",
@@ -61,7 +61,7 @@
       "name": "Daron",
       "picture": "https://i.pinimg.com/originals/16/bb/85/16bb85d785c7ec0d7dddb84c0a9dd103.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Daron",
@@ -87,7 +87,7 @@
         "message": "Just waiting for the tomb of some old dying maaaaaaaan!"
       }
     ],
-    "unreadMessages" : 3
+    "unreadMessages": 0
   },
   {
     "id": "6",
@@ -95,7 +95,7 @@
       "name": "Pieter",
       "picture": "https://ekopak.be/wp-content/uploads/2017/01/ekopack-expert-pieter-loose.png"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Pieter",
@@ -151,7 +151,7 @@
         "message": "Any advice?"
       }
     ],
-    "unreadMessages" : 0
+    "unreadMessages": 1
   },
   {
     "id": "7",
@@ -159,7 +159,7 @@
       "name": "Lisa",
       "picture": "https://www.babelio.com/users/AVT_Lisa-See_5113.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Lisa",
@@ -179,7 +179,7 @@
         "message": "Difficile de vendre du rêve à quelqu'un qui ne dort pas"
       }
     ],
-    "unreadMessages" : 0
+    "unreadMessages": 0
   },
   {
     "id": "8",
@@ -187,7 +187,7 @@
       "name": "Scarlett",
       "picture": "https://fr.unbilgi.com/wp-content/uploads/2020/07/Scarlett-Johansson.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Scarlett",
@@ -249,7 +249,7 @@
         "message": "coucou t tjrs la?"
       }
     ],
-    "unreadMessages" : 10
+    "unreadMessages": 12
   },
   {
     "id": "4",
@@ -257,7 +257,7 @@
       "name": "Claire",
       "picture": "https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fprd2-tel-epg-img.2Es3-eu-west-1.2Eamazonaws.2Ecom.2FproviderPerson.2Ffa6a0ffc9812a0c5a.2Ejpeg/300x300/quality/80/claire-keim.jpeg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "Claire",
@@ -277,7 +277,7 @@
         "message": "Hahaha! mdr"
       }
     ],
-    "unreadMessages" : 0
+    "unreadMessages": 0
   },
   {
     "id": "2",
@@ -285,7 +285,7 @@
       "name": "Jean",
       "picture": "https://static.wikia.nocookie.net/frstarwars/images/5/5d/Nick_Kellington.jpg"
     },
-    "messages" : [
+    "messages": [
       {
         "id": "1",
         "sender": "John",
@@ -311,6 +311,6 @@
         "message": "Aight!"
       }
     ],
-    "unreadMessages" : 0
+    "unreadMessages": 0
   }
 ]

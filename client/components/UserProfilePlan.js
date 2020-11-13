@@ -1,16 +1,19 @@
 import React from "react";
-import { ScrollView } from "react-native";
 import styled from "styled-components";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Theme
 import { fonts, colors, sizes } from "../styles/theme";
 
-const UserProfilePlan = props => {
+const UserProfilePlan = (props) => {
   const { children, image, common } = props;
 
   return (
     <Block {...props}>
-      <Image source={{ uri: image }} common={common} />
+      <Image source={{ uri: image }} common={common}>
+        <MaterialCommunityIcons name="image-outline" size={24} color="grey" />
+      </Image>
+
       <Text {...props}>{children}</Text>
     </Block>
   );
@@ -29,17 +32,19 @@ const Block = styled.View`
   margin: 5px 0;
   background-color: ${colors.whiteGrey};
   border-radius: ${sizes.mediumRadius};
-  ${props => props.common && `background-color: ${colors.primary}`};
+  ${(props) => props.common && `background-color: ${colors.primary}`};
 `;
 
-const Image = styled.Image`
+const Image = styled.View`
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 100%;
-  background-color: ${colors.mediumGrey};
+  background-color: ${colors.lightGrey};
   border-radius: ${sizes.mediumRadius};
   border-width: 1px;
   border-color: ${colors.whiteGrey};
-  ${props => props.common && `border-color: ${colors.primary}`};
+  ${(props) => props.common && `border-color: ${colors.primary}`};
 `;
 
 const Text = styled.Text`
@@ -51,5 +56,5 @@ const Text = styled.Text`
   font-size: 16px;
   line-height: 20;
   color: ${colors.darkGrey};
-  ${props => props.common && "color: white"};
+  ${(props) => props.common && "color: white"};
 `;

@@ -2,14 +2,14 @@
   {
     "_id": 28160374,
     "infos": {
-      "name": "Jean Jean",
+      "name": "Kristof",
       "age": "32",
       "details": {
         "city": "Paris, France",
         "job": "Comedian",
         "character": "Extrovert",
         "languages": ["French", "English", "Italian"],
-        "smoke": "socially"
+        "smoke": "Socially"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -40,7 +40,7 @@
       {
         "category": "sport",
         "order": 2,
-        "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
+        "elements": ["Rugby", "Football", "15 de France", "PSG", "Chelsea FC"]
       },
       {
         "category": "books",
@@ -49,13 +49,13 @@
           "Le moniteur automobile",
           "L'étranger",
           "Harry Potter et la Croupe de Feu",
-          "Allez les Bleus !"
+          "Memórias Póstumas de Brás Cubas"
         ]
       }
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "12"
+    "commonInterests": "0"
   },
   {
     "_id": 36927547,
@@ -67,10 +67,10 @@
         "city": "Tijuana, Mexico",
         "job": "Singer",
         "character": "Extrovert",
-        "languages": ["Spanish"],
-        "smoke": "never"
+        "languages": ["Portuguese", "English"],
+        "smoke": "Sometimes"
       },
-      "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
+      "description": "Lorem ipsum dolor sit amet 👨‍🎨 consectetur, recusandae! Magnam quis necessitatibus pecilar son labore? 😂🤣"
     },
     "pictures": [
       {
@@ -80,59 +80,62 @@
     ],
     "plans": [
       { "id": "1", "plan": "Have a drink", "image": "user.photo" },
-      { "id": "2", "plan": "Discover the city", "image": "user.photo" },
       {
-        "id": "3",
-        "plan": "Go to a concert: Denzel Curry (20/12/2019)",
+        "id": "2",
+        "plan": "Go to see a movie: Mulan (23/02/2021)",
         "image": "user.photo"
       },
-      { "id": "4", "plan": "Learn English", "image": "user.photo" }
+      { "id": "3", "plan": "Learn Spanish", "image": "user.photo" },
+      { "id": "4", "plan": "Discover the city", "image": "user.photo" }
     ],
     "interests": [
       {
         "category": "music",
         "order": 1,
         "elements": [
-          "Arctic Monkeys",
-          "Griselda",
-          "DJ Furax",
+          "Simon & Garfunkel",
+          "Thee Oh Sees",
+          "Yaeji",
           "Four Tet",
-          "Kojak Klack",
+          "Marvin Gaye",
           "System of a Down",
-          "Sam Smith",
-          "King Gizzard and the Lizard Wizard",
-          "MF DOOM",
-          "Camille Poteau",
-          "Jeanne Dark",
-          "Petrocious",
-          "Koba Lad",
-          "Union",
-          "Muse",
-          "Celophane",
-          "Ptit Biscuit",
-          "Clark",
+          "Busta Rhymes",
+          "Mexicali Brass",
+          "The White Stripes",
+          "Cashmere Cat",
+          "Hanni El Khatib",
+          "Samiyam",
+          "SBTRKT",
+          "Ludacris",
+          "Nina Simone",
+          "Goat",
+          "Wu-Tang Clan",
+          "Kanye West",
           "Aphex Twin"
         ]
       },
       {
         "category": "sport",
         "order": 2,
-        "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
+        "elements": ["Yoga", "Running"]
       },
       {
         "category": "books",
         "order": 3,
         "elements": [
-          "Le moniteur automobile",
-          "L'étranger",
-          "Harry Potter et la Croupe de Feu",
-          "Allez les Bleus !"
+          "José Saramago",
+          "Os Maias",
+          "La saga de Njáll le Brûlé",
+          "Grande Sertão: Veredas",
+          "The Alchemist",
+          "Gabriela, clavo y canela",
+          "As Pupilas do Senhor Reitor"
         ]
       }
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "10"
   },
   {
     "_id": 76389035,
@@ -144,7 +147,7 @@
         "job": "Catcheuse",
         "character": "Extrovert",
         "languages": ["French", "Dutch"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -208,7 +211,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 38926023,
@@ -220,7 +223,7 @@
         "job": "Kiné",
         "character": "Extrovert",
         "languages": ["French", "German", "Swedish"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -284,7 +287,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 28873665,
@@ -297,7 +300,7 @@
         "job": "Student",
         "character": "Extrovert",
         "languages": ["French", "Dutch"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -361,7 +364,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "5"
   },
   {
     "_id": 29638866,
@@ -374,7 +377,7 @@
         "job": "Dancer",
         "character": "Extrovert",
         "languages": ["French", "English"],
-        "smoke": "sometimes"
+        "smoke": "Sometimes"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -438,7 +441,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "2"
   },
   {
     "_id": 28364512,
@@ -451,7 +454,7 @@
         "job": "HR",
         "character": "Introvert",
         "languages": ["Japanese", "English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -515,7 +518,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "4"
   },
   {
     "_id": 29374562,
@@ -527,7 +530,7 @@
         "job": "Developper",
         "character": "Extrovert",
         "languages": ["French", "Arab", "English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -591,7 +594,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 28364523,
@@ -603,10 +606,10 @@
         "city": "Bruxelles, Belgium",
         "job": "Teacher",
         "character": "Extrovert",
-        "languages": ["French", "Spanish"],
-        "smoke": "often"
+        "languages": ["French", "Dutch"],
+        "smoke": "Often"
       },
-      "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
+      "description": "Lorem ipsum dolor sit consectetur, adipisicing capric selem elit 👋"
     },
     "pictures": [
       {
@@ -615,54 +618,46 @@
       }
     ],
     "plans": [
-      { "id": "1", "plan": "Have a drink", "image": "user.photo" },
-      { "id": "2", "plan": "Discover the city", "image": "user.photo" },
+      { "id": "1", "plan": "Learn the guitar", "image": "user.photo" },
       {
-        "id": "3",
-        "plan": "Go to a concert: Denzel Curry (20/12/2019)",
+        "id": "2",
+        "plan": "Have a sport partner: running",
         "image": "user.photo"
-      },
-      { "id": "4", "plan": "Learn English", "image": "user.photo" }
+      }
     ],
     "interests": [
       {
         "category": "music",
         "order": 1,
         "elements": [
-          "Arctic Monkeys",
-          "Griselda",
-          "DJ Furax",
-          "Four Tet",
-          "Kojak Klack",
-          "System of a Down",
+          "Serge Gainsbourg",
+          "Alizée",
+          "The Beatles",
+          "Celine Dion",
+          "Kenji Jirak",
+          "Angèle",
           "Sam Smith",
-          "King Gizzard and the Lizard Wizard",
-          "MF DOOM",
-          "Camille Poteau",
-          "Jeanne Dark",
-          "Petrocious",
-          "Koba Lad",
-          "Union",
-          "Muse",
-          "Celophane",
-          "Ptit Biscuit",
-          "Clark",
-          "Aphex Twin"
+          "Las Ketchup"
         ]
       },
       {
         "category": "sport",
         "order": 2,
-        "elements": ["Football", "Running", "Fitness", "Fc Barcelona"]
+        "elements": ["Running", "Swimming"]
       },
       {
         "category": "books",
         "order": 3,
         "elements": [
-          "Le moniteur automobile",
-          "L'étranger",
-          "Harry Potter et la Croupe de Feu",
-          "Allez les Bleus !"
+          "Les mille et une nuits",
+          "Orgueil et préjugés",
+          "Le Père Goriot",
+          "Les Hauts de Hurle-Vent",
+          "Don Quichotte",
+          "La Divine Comédie",
+          "Charles Dickens",
+          "Médée",
+          "Homme invisible, pour qui chantes-tu?"
         ]
       }
     ],
@@ -680,7 +675,7 @@
         "job": "Account Manager",
         "character": "Extrovert",
         "languages": ["French", "Dutch", "English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -744,7 +739,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 27365467,
@@ -757,7 +752,7 @@
         "job": "Doctor",
         "character": "Extrovert",
         "languages": ["German", "English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -833,7 +828,7 @@
         "job": "Student",
         "character": "Introvert",
         "languages": ["French", "Espéranto", "Elfique"],
-        "smoke": "socially"
+        "smoke": "Socially"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -897,7 +892,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "8"
   },
   {
     "_id": 102837452,
@@ -909,7 +904,7 @@
         "job": "Singer",
         "character": "Extrovert",
         "languages": ["French", "English"],
-        "smoke": "sometimes"
+        "smoke": "Sometimes"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -973,7 +968,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 38746490,
@@ -986,7 +981,7 @@
         "job": "Singer",
         "character": "Extrovert",
         "languages": ["English", "Armenian"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -1050,7 +1045,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "0"
   },
   {
     "_id": 37011288,
@@ -1063,7 +1058,7 @@
         "job": "Engineer",
         "character": "Extrovert",
         "languages": ["English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -1127,7 +1122,7 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "7"
   },
   {
     "_id": 99337788,
@@ -1139,7 +1134,7 @@
         "job": "Rapper",
         "character": "Introvert",
         "languages": ["English"],
-        "smoke": "never"
+        "smoke": "Never"
       },
       "description": "Lorem ipsum dolor sit amet 😎 consectetur, adipisicing elit. Quidem corporis minus, rerum impedit esse sit similique officiis recusandae! Magnam quis necessitatibus labore? 🙌"
     },
@@ -1203,6 +1198,6 @@
     ],
     "friends": [],
     "conversations": [],
-    "commonInterests": "3"
+    "commonInterests": "32"
   }
 ]

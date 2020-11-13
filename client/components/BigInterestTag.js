@@ -15,7 +15,7 @@ const BigInterestTag = (props) => {
     <Container>
       <Tag>
         <VennIcon />
-        <Text>You share {number} common interests</Text>
+        <Text>You share {number} common points</Text>
       </Tag>
     </Container>
   );

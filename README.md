@@ -1,5 +1,6 @@
 # Tomo
 ### Social app project, using the React Native framework
+🚧 &nbsp; Work in Progress &nbsp; 🚧
 
 You can have a **preview** of the current app's state here:  
 <sub>(Given that Github doesn't support embedded videos, you will be redirected to the Youtube website)<sub>

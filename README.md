@@ -5,7 +5,7 @@
 You can have a **preview** of the current app's state here:  
 <sub>(Given that Github doesn't support embedded videos, you will be redirected to the Youtube website)<sub>
 
-[![tomo preview video](https://i.imgur.com/uDbRXdM.jpg)](https://www.youtube.com/watch?v=v8XWVDoJ5_U)
+[![tomo preview video](https://i.imgur.com/uDbRXdM.jpg)](https://www.youtube.com/watch?v=v8XWVDoJ5_U){:target="_blank"}
 
 ___
 

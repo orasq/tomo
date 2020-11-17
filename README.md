@@ -15,4 +15,5 @@ ___
 * Settings screens
 * Edit function on profile screen
 * 'Plans' screen
+* Implementation of the Context API
 * Back-end using React, NodeJS, Express, Graph QL & MongoDB
